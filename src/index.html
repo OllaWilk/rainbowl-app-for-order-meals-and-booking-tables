@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,7 +19,8 @@
     <div class="container">
       <div class="header__wrapper">
         <div class="logo">
-          <p>logo</p>
+          <h1 class="logo__title"><span>RainBowl</span></h1>
+          <h2 class="logo__subtitle"><span>shake up your life</span></h2>
         </div>
         <div class="cart">
           <p>cart</p>
@@ -31,101 +32,107 @@
   <div id="product-list" class="product-list container"></div>
   <!-- PRODUCT -->
   <article class="product">
-    <header class="product__header">
-      <h3 class="product__name">RainBowl's fruit smoothies
-        <span>arrow down icon</span>
-      </h3>
-      <p class="product__base-price">$ 20</p>
-    </header>
-    <!-- PRODUCT DESCRIPTION -->
-    <div class="product__description">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis laboriosam sed eum est eveniet quasi repellat
-        repudiandae doloribus error impedit repellendus earum ab perspiciatis perferendis, dolorum autem aperiam non
-        nulla.
-      </p>
-    </div>
-    <!-- PRODUCT DETAILS -->
-    <div class="product__wrapper">
-      <form class="product__order">
-        <ul class="product__params">
-          <!-- PARAMS -->
-          <li>
-            <!-- RADIOS -->
-            <h3 class="product__params-title">DAIRY</h3>
-            <div class="checkbox checkbox--round">
-              <!-- RADIO -->
-              <label>milk ($0)
-                <input type="radio" name="dairy" value="milk" id="milk" checked>
-                <span class="checkbox_checkmark"></span>
-              </label>
+    <!-- container for products -->
+    <div class="container">
+
+      <header class="product__header">
+        <h3 class="product__name">RainBowl's fruit smoothies
+          <span>arrow down icon</span>
+        </h3>
+        <p class="product__base-price">$ 20</p>
+      </header>
+      <!-- PRODUCT DESCRIPTION -->
+      <div class="product__description">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis laboriosam sed eum est eveniet quasi
+          repellat
+          repudiandae doloribus error impedit repellendus earum ab perspiciatis perferendis, dolorum autem aperiam non
+          nulla.
+        </p>
+      </div>
+      <!-- PRODUCT DETAILS -->
+      <div class="product__wrapper">
+        <form class="product__order">
+          <ul class="product__params">
+            <!-- PARAMS -->
+            <li>
+              <!-- RADIOS -->
+              <h3 class="product__params-title">DAIRY</h3>
+              <div class="checkbox checkbox--round">
+                <!-- RADIO -->
+                <label>milk ($0)
+                  <input type="radio" name="dairy" value="milk" id="milk" checked>
+                  <span class="checkbox_checkmark"></span>
+                </label>
+              </div>
+              <div class="checkbox checkbox--round">
+                <!-- RADIO -->
+                <label>
+                  vegan milk ($5)
+                  <input type="radio" name="dairy" value="vegan" id="vegan">
+                  <span class="checkbox__checkmark"></span>
+                </label>
+              </div>
+            </li>
+            <!-- CHECKBOXES -->
+            <li>
+              <h3 class="product__params-title">ingredients</h3>
+              <div class="checkboxes">
+                <!-- checkbox -->
+                <label>
+                  <input type="checkbox" name="indredients" value="banana" id="banana">
+                  <span class="checkbox__checkmark"></span>
+                  Banana ($3)
+                </label>
+              </div>
+            </li>
+            <li>
+              <h3 class="product__params-title">ingredients</h3>
+              <div class="checkboxes">
+                <!-- checkbox -->
+                <label>
+                  <input type="checkbox" name="indredients" value="orange" id="orange">
+                  <span class="checkbox__checkmark"></span>
+                  Orange ($6)
+                </label>
+              </div>
+            </li>
+            <li>
+              <!-- select -->
+              <h3 class="product__params-title">Size</h3>
+              <select name="size">
+                <option value="standard" selected>standard ($5)</option>
+                <option value="medium" selected>medium ($6)</option>
+                <option value="large" selected>large ($7)</option>
+              </select>
+            </li>
+          </ul>
+          <div class="amount">
+            <!-- controls -->
+            <div class="widget-amout">
+              <!-- widget amount -->
+              <h3 class="product__params-title">Select quantity</h3>
+              <a href="less" class="btn-quantity">-</a>
+              <input type="text" class="amount" value="1">
+              <a href="more" class="btn-quantity">+</a>
             </div>
-            <div class="checkbox checkbox--round">
-              <!-- RADIO -->
-              <label>
-                vegan milk ($5)
-                <input type="radio" name="dairy" value="vegan" id="vegan">
-                <span class="checkbox__checkmark"></span>
-              </label>
+            <p class="product__total-price">Total: <span>20</span> $</p>
+            <div>
+              <!-- ADD TO CART -->
+              <a href="#add-to-cart" class="btn-primary">Add to cart</a>
             </div>
-          </li>
-          <!-- CHECKBOXES -->
-          <li>
-            <h3 class="product__params-title">ingredients</h3>
-            <div class="checkboxes">
-              <!-- checkbox -->
-              <label>
-                <input type="checkbox" name="indredients" value="banana" id="banana">
-                <span class="checkbox__checkmark"></span>
-                Banana ($3)
-              </label>
-            </div>
-          </li>
-          <li>
-            <h3 class="product__params-title">ingredients</h3>
-            <div class="checkboxes">
-              <!-- checkbox -->
-              <label>
-                <input type="checkbox" name="indredients" value="orange" id="orange">
-                <span class="checkbox__checkmark"></span>
-                Orange ($6)
-              </label>
-            </div>
-          </li>
-          <li>
-            <!-- select -->
-            <h3 class="product__params-title">Size</h3>
-            <select name="size">
-              <option value="standard" selected>standard ($5)</option>
-              <option value="medium" selected>medium ($6)</option>
-              <option value="large" selected>large ($7)</option>
-            </select>
-          </li>
-        </ul>
-        <div class="amount">
-          <!-- controls -->
-          <div class="widget-amout">
-            <!-- widget amount -->
-            <h3 class="product__params-title">Select quantity</h3>
-            <a href="less" class="btn-quantity">-</a>
-            <input type="text" class="amount" value="1">
-            <a href="more" class="btn-quantity">+</a>
           </div>
-          <p class="product__total-price">Total: <span>20</span> $</p>
-          <div>
-            <!-- ADD TO CART -->
-            <a href="#add-to-cart" class="btn-primary">Add to cart</a>
-          </div>
+          <button type="submit">Submit</button>
+        </form>
+        <div class="product__images">
+          <!-- IMAGES -->
+          <img src="./images/" alt="cup" class="active">
+          <img src="./images/" alt="orange" class="orange-slice">
+          <img src="./images/" alt="banana" class="banana-slice">
         </div>
-        <button type="submit">Submit</button>
-      </form>
-      <div class="product__images">
-        <!-- IMAGES -->
-        <img src="./images/" alt="cup" class="active">
-        <img src="./images/" alt="orange" class="orange-slice">
-        <img src="./images/" alt="banana" class="banana-slice">
       </div>
     </div>
   </article>
+
 
   <script src="js/functions.js"></script>
   <script src="js/data.js"></script>
