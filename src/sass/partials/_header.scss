@@ -4,7 +4,8 @@
   padding: ($base-size * 5) 0;
 
   &__wrapper {
-    @include flex(row, center, space-between);
+    // @include flex(row, center, space-between);
+    position: relative;
   }
 }
 
