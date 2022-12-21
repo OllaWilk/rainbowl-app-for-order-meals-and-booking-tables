@@ -12,6 +12,7 @@
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  cursor: pointer;
 
   &:hover {
     background: lighten($btn-bg, 3%);
@@ -23,6 +24,20 @@
   flex-direction: $flex-direction;
   align-items: $align-items;
   justify-content: $justify-content;
+}
+
+@mixin accordion-open() {
+  transform: translate(0, 0);
+  max-height: 1000px;
+  opacity: 1;
+}
+
+@mixin accordion-closed() {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+  max-height: 0;
+  transform: translate(0, 50%);
 }
 
 // Small devices

@@ -8,9 +8,7 @@
   <title>RainBowl shake</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
-    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/fb8cba6040.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -22,8 +20,63 @@
           <h1 class="logo__title"><span>RainBowl</span></h1>
           <h2 class="logo__subtitle"><span>shake up your life</span></h2>
         </div>
-        <div class="cart">
-          <p>cart</p>
+        <div class="cart ">
+          <div class="cart__summary">
+            <span class="cart__total-number">0</span>
+            <span class="cart__total-price">Total price: <strong>$0</strong></span>
+            <i class="fa-solid fa-chevron-down"></i>
+            <i class="fas fa-shopping-cart cart__icon"></i>
+          </div>
+          <div class="cart__content">
+            <form class="cart__order">
+              <ul class="cart__order-summary">
+                <li>
+                  <div class="widget-amount">
+                    <!-- WIDGET AMOUNT -->
+                    <a href="#less" class="btn-quantity btn-quantity--lt">
+                      <i class="fas fa-minus"></i>
+                    </a>
+                    <input type="text" class="amount" value="1">
+                    <a href="#more" class="btn-quantity btn-quantity--lt">
+                      <i class="fas fa-plus"></i>
+                    </a>
+                  </div>
+                  <div class="cart__product">
+                    <div class="cart__product-header">
+                      <span class="cart__product-name">Banana</span>
+                      <span>$<srtong class="cart__product-price">27</srtong></span>
+                    </div>
+                  </div>
+                  <ul class="cart__action-buttons">
+                    <li>
+                      <a href="#remove">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="cart__order-price">
+                <li>
+                  <span class="cart__order-price-name">Subtotal:</span>
+                  <span class="cart__order-price-sum">$0</span>
+                </li>
+                <li>
+                  <span class="cart__order-price-name">Delivery:</span>
+                  <span class="cart__order-price-sum">$0</span>
+                </li>
+                <li>
+                  <span class="cart__order-price-name">Total:</span>
+                  <span class="cart__order-price-sum">$0</span>
+                </li>
+              </ul>
+              <div class="cart__order-confirmation">
+                <input type="tel" name="phone" placeholder="Your phone">
+                <input type="text" name="address" placeholder="Your address">
+                <button type="submit" class="btn-secondary">Order</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -59,16 +112,25 @@
               <h3 class="product__params-title">DAIRY</h3>
               <div class="checkbox checkbox--round">
                 <!-- RADIO -->
-                <label>milk ($0)
-                  <input type="radio" name="dairy" value="milk" id="milk" checked>
-                  <span class="checkbox_checkmark"></span>
+                <label>
+                  oat milk ($5)
+                  <input type="radio" name="dairy" value="oat-milk" id="oat-milk">
+                  <span class="checkbox__checkmark"></span>
                 </label>
               </div>
               <div class="checkbox checkbox--round">
                 <!-- RADIO -->
                 <label>
-                  vegan milk ($5)
-                  <input type="radio" name="dairy" value="vegan" id="vegan">
+                  almound milk ($5)
+                  <input type="radio" name="dairy" value="almound-milk" id="almound-milk">
+                  <span class="checkbox__checkmark"></span>
+                </label>
+              </div>
+              <div class="checkbox checkbox--round">
+                <!-- RADIO -->
+                <label>
+                  milk ($5)
+                  <input type="radio" name="dairy" value="milk" id="milk">
                   <span class="checkbox__checkmark"></span>
                 </label>
               </div>
@@ -76,23 +138,12 @@
             <!-- CHECKBOXES -->
             <li>
               <h3 class="product__params-title">ingredients</h3>
-              <div class="checkboxes">
+              <div class="checkbox">
                 <!-- checkbox -->
                 <label>
                   <input type="checkbox" name="indredients" value="banana" id="banana">
                   <span class="checkbox__checkmark"></span>
                   Banana ($3)
-                </label>
-              </div>
-            </li>
-            <li>
-              <h3 class="product__params-title">ingredients</h3>
-              <div class="checkboxes">
-                <!-- checkbox -->
-                <label>
-                  <input type="checkbox" name="indredients" value="orange" id="orange">
-                  <span class="checkbox__checkmark"></span>
-                  Orange ($6)
                 </label>
               </div>
             </li>
