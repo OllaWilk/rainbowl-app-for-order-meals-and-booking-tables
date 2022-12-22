@@ -1,0 +1,9 @@
+footer {
+  background-color: $color-main;
+  @include flex(row, center, center);
+
+  p {
+    padding: $base-size;
+    cursor: pointer;
+  }
+}
