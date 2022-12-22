@@ -1,1 +1,34 @@
 /* Variables */
+
+$color-light: #fff;
+$color-dark: #3a3a3a;
+$color-gradient-light: #ffc8d7;
+$color-gradient-dark: #9c96f2;
+$color-main: #e2bcbf;
+$color-pink-mid: #ffc6d5;
+$color-pink-light: #f8d2dd;
+
+$font-text: 'Source Sans Pro', sans-serif;
+$font-header: 'Abril Fatface', cursive;
+
+/* Font weight */
+
+$font-light: 300;
+$font-normal: 400;
+$font-semibold: 600;
+$font-bold: 700;
+
+/* Response */
+
+$screen-xxl: 1400px;
+$screen-xl: 1200px;
+$screen-l: 992px;
+$screen-md: 768px;
+$screen-sm: 576px;
+
+/* Helpers */
+
+$transition: all 0.3s;
+$radius: 4px;
+
+$base-size: 12px;
