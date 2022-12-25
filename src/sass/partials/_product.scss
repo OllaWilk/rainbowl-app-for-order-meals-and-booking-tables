@@ -30,6 +30,7 @@
     top: $base-size;
     font-size: ($base-size * 1.5);
     transition: $transition;
+    margin-left: 1rem;
   }
 
   &__base-price {
@@ -111,12 +112,10 @@
   }
 }
 
-.widget-amount {
-  input {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    margin: 0 ($base-size * 0.5);
-    padding: 0;
-  }
+.amount-inpun {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: 0 ($base-size * 0.5);
+  padding: 0;
 }
