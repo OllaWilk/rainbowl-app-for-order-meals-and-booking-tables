@@ -53,7 +53,7 @@ dataSource.products = {
         type: 'select',
         options: {
           standard: { label: 'standard', price: 0, default: true },
-          medium: { label: 'large', price: 1 },
+          medium: { label: 'medium', price: 1 },
           large: { label: 'large', price: 2 },
         },
       },
@@ -113,7 +113,7 @@ dataSource.products = {
         type: 'select',
         options: {
           standard: { label: 'standard', price: 0, default: true },
-          medium: { label: 'large', price: 1 },
+          medium: { label: 'medium', price: 1 },
           large: { label: 'large', price: 2 },
         },
       },
