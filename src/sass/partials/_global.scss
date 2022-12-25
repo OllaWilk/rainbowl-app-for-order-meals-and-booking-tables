@@ -7,12 +7,14 @@
 }
 
 body {
-  background-color: $color-light;
+  background-color: lighten($color: $color-dark, $amount: 70%);
   font-family: $font-text;
   font-size: 14px;
   line-height: 1.7;
   font-weight: $font-normal;
   color: $color-dark;
+  @include flex(column, stretch, space-between);
+  height: 100vh;
 }
 
 .container {

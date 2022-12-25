@@ -5,7 +5,8 @@
 .product {
   margin: ($base-size * 0.5) 0;
   padding: ($base-size * 6) ($base-size);
-  //   border-bottom: 1px solid lighten($color-dark, 50%);
+  border-bottom: 1px solid lighten($color-dark, 50%);
+  background-color: $color-light;
   border-radius: $radius;
 
   &__header {
@@ -44,7 +45,7 @@
   &__wrapper {
     @include flex(row, center, space-between);
     animation: flipdown 0.5s ease both;
-    // @include accordion-closed();
+    @include accordion-closed();
   }
 
   &__params {
@@ -70,6 +71,7 @@
     font-size: 14px;
     font-weight: $font-bold;
     text-transform: uppercase;
+    margin: $base-size 0;
   }
 
   &__images {

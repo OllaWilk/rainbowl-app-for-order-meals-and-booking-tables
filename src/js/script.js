@@ -7,6 +7,12 @@
     containerOf: {
       menu: '#product-list',
     },
+    menuProduct: {
+      clickable: '.product__header',
+    },
+    all: {
+      menuProductsActive: '#product-list > .product.active',
+    },
   };
 
   const templates = {
@@ -20,7 +26,7 @@
       this.product = product;
       this.data = data;
       this.renderInMenu();
-      console.log('new PRODUCT', this);
+      this.toggleAcordion();
     }
 
     renderInMenu() {
@@ -39,6 +45,31 @@
       const menuContainer = document.querySelector(select.containerOf.menu);
       /* add element to menu */
       menuContainer.appendChild(this.element);
+    }
+
+    toggleAcordion() {
+      const thisProduct = this;
+      /* get clickable element */
+      const openMenuCart = thisProduct.element.querySelector(
+        select.menuProduct.clickable
+      );
+      /* add event listener to open Menu cart */
+      openMenuCart.addEventListener('click', function (e) {
+        e.preventDefault();
+        /* add class active to clicked element */
+        thisProduct.element.classList.toggle('active');
+
+        /* find all active products */
+        const allActiveProducts = document.querySelectorAll(
+          select.all.menuProductsActive
+        );
+        /* check if the active product isn't the element of thisProduct  */
+        allActiveProducts.forEach((activeProduct) => {
+          if (activeProduct !== thisProduct.element) {
+            activeProduct.classList.remove('active');
+          }
+        });
+      });
     }
   }
 
