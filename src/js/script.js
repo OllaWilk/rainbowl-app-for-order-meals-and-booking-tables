@@ -123,6 +123,7 @@
       console.log('process order');
     }
   }
+  console.log('test');
 
   const app = {
     initMenu: function () {
