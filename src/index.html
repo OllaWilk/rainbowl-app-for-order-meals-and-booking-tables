@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://kit.fontawesome.com/fb8cba6040.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,15 +18,22 @@
     <div class="container">
       <div class="header__wrapper">
         <div class="logo">
-          <h1 class="logo__title"><span>RainBowl</span></h1>
-          <h2 class="logo__subtitle"><span>shake up your life</span></h2>
+          <h1 class="logo__title">Rain<span>Bowl</span></h1>
         </div>
-        <div class="cart ">
+        <nav class="navigation">
+          <ul class="navigation_list">
+            <li> <a href="/home">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/reservation">Reservation</a></li>
+          </ul>
+        </nav>
+        <div class="cart active">
           <div class="cart__summary">
-            <span class="cart__total-number">0</span>
+            <div class="cart__icon-wrap">
+              <span class="cart__total-number">0</span>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
             <span class="cart__total-price">Total price: <strong>$0</strong></span>
-            <i class="fa-solid fa-chevron-down"></i>
-            <i class="fas fa-shopping-cart cart__icon"></i>
           </div>
           <div class="cart__content">
             <form class="cart__order">
