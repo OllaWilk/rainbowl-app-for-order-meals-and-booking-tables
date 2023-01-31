@@ -1,9 +1,7 @@
 .navigation {
-  height: 100%;
   position: relative;
 
   &_list {
-    height: 100%;
     @include flex(row, center, space-between);
 
     @include l-max {
@@ -11,27 +9,20 @@
     }
 
     li {
-      height: 100%;
       @include flex(row, center, space-between);
       transition: $transition;
       cursor: pointer;
 
-      &:hover {  
-        background-color: $color-second;
-        color: $color-light;
-      }
-
       a {
         color: $color-dark;
-        height: 100%;
-        align-items: center;
-        display: flex;
-        padding: 0 ($base-size * 2 );
+        height: 100%;       
+        margin: 0 ($base-size * 2 );
         text-transform: uppercase;
         letter-spacing: 1px;
 
-        &:hover {
-          color: $color-light;
+        &:hover {  
+          border-bottom: 2px solid $color-dark;
+          font-weight: $font-semibold;
         }
       }             
     }
