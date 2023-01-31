@@ -18,7 +18,11 @@
     <div class="container">
       <div class="header__wrapper">
         <div class="logo">
-          <h1 class="logo__title">Rain<span>Bowl</span></h1>
+          <img src = "./images/logo.svg" alt="My Happy SVG"/>
+          <div>
+            <p class="logo__subtitle">make your</p>
+            <h1 class="logo__title">rain<span>Bowl</span></h1>
+          </div>
         </div>
         <nav class="navigation">
           <ul class="navigation_list">
@@ -27,7 +31,7 @@
             <li><a href="/reservation">Reservation</a></li>
           </ul>
         </nav>
-        <div class="cart active">
+        <div class="cart ">
           <div class="cart__summary">
             <div class="cart__icon-wrap">
               <span class="cart__total-number">0</span>
@@ -90,104 +94,105 @@
     </div>
   </header>
 
-  <div id="product-list" class="product-list container"></div>
+  <!-- <div id="product-list" class="product-list container"></div> -->
   <!-- PRODUCT -->
   <article class="product">
     <!-- container for products -->
-    <div class="container">
-
-      <header class="product__header">
-        <h3 class="product__name">RainBowl's fruit smoothies
-          <i class="fa-solid fa-chevron-down product__icon"></i>
-        </h3>
-        <p class="product__base-price">$ 20</p>
-      </header>
-      <!-- PRODUCT DESCRIPTION -->
-      <div class="product__description">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis laboriosam sed eum est eveniet quasi
-          repellat
-          repudiandae doloribus error impedit repellendus earum ab perspiciatis perferendis, dolorum autem aperiam non
-          nulla.
-        </p>
-      </div>
-      <!-- PRODUCT DETAILS -->
-      <div class="product__wrapper active">
-        <form class="product__order">
-          <ul class="product__params">
-            <!-- PARAMS -->
-            <li>
-              <!-- RADIOS -->
-              <h3 class="product__params-title">DAIRY</h3>
-              <div class="checkbox checkbox--round">
-                <!-- RADIO -->
-                <label>
-                  oat milk ($5)
-                  <input type="radio" name="dairy" value="oat-milk" id="oat-milk">
-                  <span class="checkbox__checkmark"></span>
-                </label>
-              </div>
-              <div class="checkbox checkbox--round">
-                <!-- RADIO -->
-                <label>
-                  almound milk ($5)
-                  <input type="radio" name="dairy" value="almound-milk" id="almound-milk">
-                  <span class="checkbox__checkmark"></span>
-                </label>
-              </div>
-              <div class="checkbox checkbox--round">
-                <!-- RADIO -->
-                <label>
-                  milk ($5)
-                  <input type="radio" name="dairy" value="milk" id="milk">
-                  <span class="checkbox__checkmark"></span>
-                </label>
-              </div>
-            </li>
-            <!-- CHECKBOXES -->
-            <li>
-              <h3 class="product__params-title">ingredients</h3>
-              <div class="checkbox">
-                <!-- checkbox -->
-                <label>
-                  <input type="checkbox" name="indredients" value="banana" id="banana">
-                  <span class="checkbox__checkmark"></span>
-                  Banana ($3)
-                </label>
-              </div>
-            </li>
-            <li>
-              <!-- select -->
-              <h3 class="product__params-title">Size</h3>
-              <select name="size">
-                <option value="standard" selected>standard ($5)</option>
-                <option value="medium" selected>medium ($6)</option>
-                <option value="large" selected>large ($7)</option>
-              </select>
-            </li>
-          </ul>
-          <div class="amount">
-            <!-- controls -->
-            <div class="widget-amout">
-              <!-- widget amount -->
-              <h3 class="product__params-title">Select quantity</h3>
-              <a href="less" class="btn-quantity">-</a>
-              <input type="text" class="amount" value="1">
-              <a href="more" class="btn-quantity">+</a>
-            </div>
-            <p class="product__total-price">Total: <span>20</span> $</p>
-            <div>
-              <!-- ADD TO CART -->
-              <a href="#add-to-cart" class="btn-primary">Add to cart</a>
-            </div>
+    <div class="product__background-menu">
+      <div class="product__wrap-header container">
+        <header class="product__header">
+          <h3 class="product__name">RainBowl's fruit smoothies
+          </h3>
+          <p class="product__base-price">$ 20</p>
+          <div class="product__description">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis laboriosam sed eum est eveniet quasi
+              repellat
+              repudiandae doloribus error impedit repellendus earum ab perspiciatis perferendis, dolorum autem aperiam non
+              nulla.
+            </p>
           </div>
-        </form>
+        </header>
+        <!-- PRODUCT DESCRIPTION -->
+              <!-- PRODUCT IMAGES -->
         <div class="product__images">
-          <!-- IMAGES -->
           <img src="./images/strawbery.png" alt="strawbery" class="active strawbery ">
           <img src="./images/orange.png" alt="orange" class="orange-slice">
           <img src="./images/banana.png" alt="banana" class="banana-slice">
         </div>
       </div>
+    </div>
+
+    <!-- PRODUCT DETAILS -->
+    <div class="product__wrapper container active">
+      <form class="product__order">
+        <ul class="product__params">
+          <!-- PARAMS -->
+          <li>
+            <!-- RADIOS -->
+            <h3 class="product__params-title">DAIRY</h3>
+            <div class="checkbox checkbox--round">
+              <!-- RADIO -->
+              <label>
+                oat milk ($5)
+                <input type="radio" name="dairy" value="oat-milk" id="oat-milk">
+                <span class="checkbox__checkmark"></span>
+              </label>
+            </div>
+            <div class="checkbox checkbox--round">
+              <!-- RADIO -->
+              <label>
+                almound milk ($5)
+                <input type="radio" name="dairy" value="almound-milk" id="almound-milk">
+                <span class="checkbox__checkmark"></span>
+              </label>
+            </div>
+            <div class="checkbox checkbox--round">
+              <!-- RADIO -->
+              <label>
+                milk ($5)
+                <input type="radio" name="dairy" value="milk" id="milk">
+                <span class="checkbox__checkmark"></span>
+              </label>
+            </div>
+          </li>
+          <!-- CHECKBOXES -->
+          <li>
+            <h3 class="product__params-title">ingredients</h3>
+            <div class="checkbox">
+              <!-- checkbox -->
+              <label>
+                <input type="checkbox" name="indredients" value="banana" id="banana">
+                <span class="checkbox__checkmark"></span>
+                Banana ($3)
+              </label>
+            </div>
+          </li>
+          <li>
+            <!-- select -->
+            <h3 class="product__params-title">Size</h3>
+            <select name="size">
+              <option value="standard" selected>standard ($5)</option>
+              <option value="medium" selected>medium ($6)</option>
+              <option value="large" selected>large ($7)</option>
+            </select>
+          </li>
+        </ul>
+        <div class="amount">
+          <!-- controls -->
+          <div class="widget-amout">
+            <!-- widget amount -->
+            <h3 class="product__params-title">Select quantity</h3>
+            <a href="less" class="btn-quantity">-</a>
+            <input type="text" class="amount" value="1">
+            <a href="more" class="btn-quantity">+</a>
+          </div>
+          <p class="product__total-price">Total: <span>20</span> $</p>
+          <div>
+            <!-- ADD TO CART -->
+            <a href="#add-to-cart" class="btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </form>
     </div>
   </article>
   <footer>

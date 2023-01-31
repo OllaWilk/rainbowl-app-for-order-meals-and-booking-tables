@@ -1,17 +1,18 @@
-.product-list {
-  padding: ($base-size * 3) 0;
-}
-
 .product {
-  // margin: ($base-size * 0.5) 0;
-  padding: ($base-size * 6) ($base-size);
-  // border-radius: $radius;
-  // background-color: red;
+  &__background-menu {
+    background-color: $color-bkg-grey;
+    height: 30%;
+  }
+
+  &__wrap-header {
+    @include flex(row, center,space-between);
+  }
 
   &__header {
-    @include flex(row, center, space-between);
+    @include flex(column, flex-start, space-between);
     margin-bottom: ($base-size * 2);
-    // background-color: pink;
+    background-color: pink;
+    width: 30%;
    
     font-size: 22px;
     cursor: pointer;
@@ -39,6 +40,7 @@
 
   &__description {
     color: lighten($color: $color-dark, $amount: 10%);
+    background-color: yellow;
   }
 
   &__wrapper {
