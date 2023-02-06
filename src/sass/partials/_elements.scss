@@ -25,7 +25,7 @@
 }
 
 .btn-secondary {
-  @include btn($color-main, $color-light, $color-main);
+  @include btn($color-second, $color-light, $color-main);
 }
 
 /* FORM ELEMENTS */
@@ -92,4 +92,13 @@ select {
       border-radius: 50%;
     }
   }
+}
+
+/*OTHER*/
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }

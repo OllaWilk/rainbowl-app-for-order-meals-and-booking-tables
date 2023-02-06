@@ -1,46 +1,36 @@
 .cart {
   background-color: $color-light;
-  width: 270px;
-  margin-top: $base-size;
-  padding: ($base-size) ($base-size * 1.5);
-  border-radius: $radius;
-  color: $color-main;
-  font-size: $base-size;
+  position: relative;
   z-index: 99990;
-  position: absolute;
-  top: $base-size;
-  right: 0;
-  box-shadow: 0px 5px 5px $color-main;
+  max-width: 266px;
 
   &.active {
     .cart__content {
-      padding: ($base-size * 1.5) 0 0 0;
+      position: absolute;
+      padding: ($base-size * 1.5) 1.5rem;
       @include accordion-open();
+      background-color: $color-light;
+      box-shadow: 0px 0px 4px $color-main;
     }
   }
 
   &__summary {
-    @include flex(row, center, space-between);
+    @include flex(row, center, space-around);
     text-transform: uppercase;
     cursor: pointer;
+    width: 100%;
+    padding: 2rem;
   }
 
-  &__icon {
-    font-size: ($base-size * 2);
-  }
-
-  &__total-number {
-    background: $color-main;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    color: $color-light;
-    text-align: center;
-    line-height: 30px;
+  &__icon-wrap {
+    color: $color-dark;
+    font-size: $base-size;
+    border-right: 1px solid lighten($color-dark, 40%);
+    padding-right: 16px;
   }
 
   &__total-price {
-    color: $color-dark;
+    padding-left: 16px;
   }
 
   &__content {
@@ -82,7 +72,7 @@
     font-size: 0;
 
     i {
-      font-size: 14px;
+      font-size: $base-size;
     }
 
     li {
@@ -90,7 +80,7 @@
     }
 
     a {
-      color: $color-main;
+      color: $color-second;
 
       &:hover {
         color: lighten($color: $color-dark, $amount: 40%);

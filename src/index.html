@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://kit.fontawesome.com/fb8cba6040.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,15 +18,26 @@
     <div class="container">
       <div class="header__wrapper">
         <div class="logo">
-          <h1 class="logo__title"><span>RainBowl</span></h1>
-          <h2 class="logo__subtitle"><span>shake up your life</span></h2>
+          <img src = "./images/logo.svg" alt="My Happy loggo"/>
+          <div>
+            <p class="logo__subtitle">make your</p>
+            <h1 class="logo__title">rain<span>Bowl</span></h1>
+          </div>
         </div>
+        <nav class="navigation">
+          <ul class="navigation_list">
+            <li> <a href="/home">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/reservation">Reservation</a></li>
+          </ul>
+        </nav>
         <div class="cart ">
           <div class="cart__summary">
-            <span class="cart__total-number">0</span>
+            <div class="cart__icon-wrap">
+              <span class="cart__total-number">0</span>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
             <span class="cart__total-price">Total price: <strong>$0</strong></span>
-            <i class="fa-solid fa-chevron-down"></i>
-            <i class="fas fa-shopping-cart cart__icon"></i>
           </div>
           <div class="cart__content">
             <form class="cart__order">
@@ -82,109 +94,114 @@
     </div>
   </header>
 
-  <div id="product-list" class="product-list container"></div>
+  <!-- <div id="product-list" class="product-list container"></div> -->
   <!-- PRODUCT -->
   <article class="product">
     <!-- container for products -->
-    <div class="container">
-
-      <header class="product__header">
-        <h3 class="product__name">RainBowl's fruit smoothies
-          <i class="fa-solid fa-chevron-down product__icon"></i>
-        </h3>
-        <p class="product__base-price">$ 20</p>
-      </header>
-      <!-- PRODUCT DESCRIPTION -->
-      <div class="product__description">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis laboriosam sed eum est eveniet quasi
-          repellat
-          repudiandae doloribus error impedit repellendus earum ab perspiciatis perferendis, dolorum autem aperiam non
-          nulla.
-        </p>
-      </div>
-      <!-- PRODUCT DETAILS -->
-      <div class="product__wrapper active">
-        <form class="product__order">
-          <ul class="product__params">
-            <!-- PARAMS -->
-            <li>
-              <!-- RADIOS -->
-              <h3 class="product__params-title">DAIRY</h3>
-              <div class="checkbox checkbox--round">
-                <!-- RADIO -->
-                <label>
-                  oat milk ($5)
-                  <input type="radio" name="dairy" value="oat-milk" id="oat-milk">
-                  <span class="checkbox__checkmark"></span>
-                </label>
-              </div>
-              <div class="checkbox checkbox--round">
-                <!-- RADIO -->
-                <label>
-                  almound milk ($5)
-                  <input type="radio" name="dairy" value="almound-milk" id="almound-milk">
-                  <span class="checkbox__checkmark"></span>
-                </label>
-              </div>
-              <div class="checkbox checkbox--round">
-                <!-- RADIO -->
-                <label>
-                  milk ($5)
-                  <input type="radio" name="dairy" value="milk" id="milk">
-                  <span class="checkbox__checkmark"></span>
-                </label>
-              </div>
-            </li>
-            <!-- CHECKBOXES -->
-            <li>
-              <h3 class="product__params-title">ingredients</h3>
-              <div class="checkbox">
-                <!-- checkbox -->
-                <label>
-                  <input type="checkbox" name="indredients" value="banana" id="banana">
-                  <span class="checkbox__checkmark"></span>
-                  Banana ($3)
-                </label>
-              </div>
-            </li>
-            <li>
-              <!-- select -->
-              <h3 class="product__params-title">Size</h3>
-              <select name="size">
-                <option value="standard" selected>standard ($5)</option>
-                <option value="medium" selected>medium ($6)</option>
-                <option value="large" selected>large ($7)</option>
-              </select>
-            </li>
-          </ul>
-          <div class="amount">
-            <!-- controls -->
-            <div class="widget-amout">
-              <!-- widget amount -->
-              <h3 class="product__params-title">Select quantity</h3>
-              <a href="less" class="btn-quantity">-</a>
-              <input type="text" class="amount" value="1">
-              <a href="more" class="btn-quantity">+</a>
-            </div>
-            <p class="product__total-price">Total: <span>20</span> $</p>
-            <div>
-              <!-- ADD TO CART -->
-              <a href="#add-to-cart" class="btn-primary">Add to cart</a>
-            </div>
+    <div class="product__background-menu">
+      <div class="product__wrap-header container">
+        <header class="product__header">
+          <h3 class="product__name">RainBowl Chia Pudding
+          </h3>
+          <div class="product__description">
+            <p>This Rainbowl Chia Pudding not only satisfies a sweet tooth, but it is full of healthy antioxidant-rich foods. Chia is an increasingly popular food ingredient among consumers and manufacturers. The nutrient-rich seeds are good sources of α-linolenic acid (an omega-3 fatty acid), fiber, protein, vitamins, minerals, and antioxidants, prompting claims that chia is “superfood".
+            </p>
           </div>
-        </form>
+          <p class="product__base-price">Price: $ 20</p>
+          <p class="product__allergens">Product may contains soy, egg and milk ingredients.</br> May contain traces of tree nuts. </p>
+        </header>
+        <!-- PRODUCT DESCRIPTION -->
+              <!-- PRODUCT IMAGES -->
         <div class="product__images">
-          <!-- IMAGES -->
-          <img src="./images/strawbery.png" alt="strawbery" class="active strawbery ">
-          <img src="./images/orange.png" alt="orange" class="orange-slice">
-          <img src="./images/banana.png" alt="banana" class="banana-slice">
+          <img src="./images/chiaBowl/all.svg" alt="bowl" class="active bowl ">
         </div>
       </div>
+    </div>
+
+    <!-- PRODUCT DETAILS -->
+    <div class="product__wrapper container active">
+      <div class="product__customize">
+        <p>Customize your bowl</p>
+        <div></div>
+        <p>select from list
+        <i class="fa-solid fa-chevron-down"></i>
+      </p>
+      </div>
+      <form class="product__order">
+        <ul class="product__params">
+          <!-- PARAMS -->
+          <li>
+            <!-- RADIOS -->
+            <h3 class="product__params-title">DAIRY</h3>
+            <div class="checkbox checkbox--round">
+              <!-- RADIO -->
+              <label>
+                oat milk ($5)
+                <input type="radio" name="dairy" value="oat-milk" id="oat-milk">
+                <span class="checkbox__checkmark"></span>
+              </label>
+            </div>
+            <div class="checkbox checkbox--round">
+              <!-- RADIO -->
+              <label>
+                almound milk ($5)
+                <input type="radio" name="dairy" value="almound-milk" id="almound-milk">
+                <span class="checkbox__checkmark"></span>
+              </label>
+            </div>
+            <div class="checkbox checkbox--round">
+              <!-- RADIO -->
+              <label>
+                milk ($5)
+                <input type="radio" name="dairy" value="milk" id="milk">
+                <span class="checkbox__checkmark"></span>
+              </label>
+            </div>
+          </li>
+          <!-- CHECKBOXES -->
+          <li>
+            <h3 class="product__params-title">ingredients</h3>
+            <div class="checkbox">
+              <!-- checkbox -->
+              <label>
+                <input type="checkbox" name="indredients" value="banana" id="banana">
+                <span class="checkbox__checkmark"></span>
+                Banana ($3)
+              </label>
+            </div>
+          </li>
+          <li>
+            <!-- select -->
+            <h3 class="product__params-title">Size</h3>
+            <select name="size">
+              <option value="standard" selected>standard ($5)</option>
+              <option value="medium" selected>medium ($6)</option>
+              <option value="large" selected>large ($7)</option>
+            </select>
+          </li>
+        </ul>
+        <div class="amount">
+          <!-- controls -->
+          <div class="widget-amout">
+            <!-- widget amount -->
+            <h3 class="product__params-title">Select quantity</h3>
+            <a href="less" class="btn-quantity">-</a>
+            <input type="text" class="amount" value="1">
+            <a href="more" class="btn-quantity">+</a>
+          </div>
+          <p class="product__total-price">Total: <span>20</span> $</p>
+          <div>
+            <!-- ADD TO CART -->
+            <a href="#add-to-cart" class="btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </form>
     </div>
   </article>
   <footer>
     <p>Check my github</p>
     <i class="fa-brands fa-github"></i>
+    <p><a href="https://pl.freepik.com/darmowe-wektory/zestaw-miski-zup-pomidorowe-gazpacho-z-czerwona-ostra-papryka-zielony-puree-z-brokulow-curry-z-grzybami-tradycyjny-barszcz-do-gotowania-warzyw-zupy-kremowej-jedzenia-zdrowej-zywnosci_10172408.htm#query=soup%20svg&position=15&from_view=search&track=ais">Obraz autorstwa pch.vector</a> na Freepik</p>
   </footer>
 
   <script src="js/functions.js"></script>
