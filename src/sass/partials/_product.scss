@@ -1,28 +1,24 @@
 .product {
   &__background-menu {
     background-color: $color-bkg-grey;
-    height: 30%;
   }
 
   &__wrap-header {
     @include flex(row, center,space-between);
+    // height: 70vh;
   }
 
   &__header {
     @include flex(column, flex-start, space-between);
-    margin-bottom: ($base-size * 2);
-    background-color: pink;
-    width: 30%;
-   
-    font-size: 22px;
-    cursor: pointer;
+    width: 33.33%;
+    height: 100%;
+    padding: 2rem 0;
   }
 
   &__name {
-    position: relative;
-    margin: 0;
-    font-weight: $font-semibold;
-    text-transform: uppercase;
+    font-weight: $font-light;
+    font-size: 50px;
+    line-height: 60px;
   }
 
   &__icon {
@@ -35,12 +31,24 @@
   }
 
   &__base-price {
-    font-weight: $font-light;
+    border: 1px solid $color-dark;
+    border-radius: 50px;
+    padding: 10px;
+    font-weight: $font-semibold;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  &__allergens {
+    color: lighten($color: $color-dark, $amount: 50%);
+    font-size: 10px;
+    margin-top: 25px;
   }
 
   &__description {
     color: lighten($color: $color-dark, $amount: 10%);
-    background-color: yellow;
+    font-size: 15px;
+    margin: 20px 0 15px 0;
   }
 
   &__wrapper {
@@ -76,8 +84,8 @@
 
   &__images {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 60%;
+    height: 60vh;
     transition: opacity 200ms;
 
     &.small {
@@ -87,9 +95,10 @@
 
     > img {
       @include center();
-      object-fit: cover;
-      width: 100%;
+      // object-fit: cover;
+      // width: 100%;
       height: 100%;
+      
       opacity: 0;
 
       &.active {

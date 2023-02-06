@@ -10,12 +10,11 @@
 }
 
 .logo {
-  // display: inline-block;
   line-height: 1;
   @include flex(row, flex-end,center);
 
   img {
-    height: 43px;
+    height: 40px;
     margin-right: 11px;
   }
 
