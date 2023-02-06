@@ -54,27 +54,58 @@
   &__wrapper {
     @include flex(row, center, space-between);
     animation: flipdown 0.5s ease both;
+    @include flex(column, flex-start, center);
+
     // @include accordion-closed();
+  }
+
+  &__order {
+    width: 100%;
+    // opacity: 0;
+    transition: opacity 200ms;
+    background-color: pink;
+  }
+
+  &__customize {
+    @include flex(row, center, space-between);
+    width: 100%;
+    height: 60px;
+    cursor: pointer;
+    
+    p {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: $font-semibold;
+      position: relative;  
+    }
+
+    div {
+      width: 40vw;
+      height: 1px;
+      background-color: $color-dark;
+    }
+
+    .fa-chevron-down {
+      object-fit: cover;
+      font-size: 20px;
+      margin-left: 1rem;
+    }
+    
   }
 
   &__params {
     margin: 0 0 ($base-size * 3) 0;
     padding: 0;
     list-style-type: none;
+    background-color: red;
   }
 
   &__params-title {
     font-size: 14px;
     font-weight: $font-bold;
     text-transform: uppercase;
-    margin: ($base-size * 2) 0;
   }
 
-  &__order {
-    width: calc(100% - 400px);
-    // opacity: 0;
-    transition: opacity 200ms;
-  }
 
   &__total-price {
     font-size: 14px;
@@ -84,9 +115,11 @@
 
   &__images {
     position: relative;
-    width: 60%;
-    height: 60vh;
+    height: 60%;
+   
     transition: opacity 200ms;
+    padding: calc($base-size * 2) 0;
+    
 
     &.small {
       width: 220px;
@@ -94,11 +127,8 @@
     }
 
     > img {
-      @include center();
-      // object-fit: cover;
-      // width: 100%;
+      object-fit: cover;
       height: 100%;
-      
       opacity: 0;
 
       &.active {
