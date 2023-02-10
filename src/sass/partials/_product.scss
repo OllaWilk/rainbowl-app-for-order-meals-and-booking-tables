@@ -1,10 +1,11 @@
 .product {
   &__background-menu {
     background-color: $color-bkg-grey;
+    cursor: pointer;
   }
 
   &__wrap-header {
-    @include flex(row, center,space-between);
+    @include flex(row, center, space-between);
     // height: 70vh;
   }
 
@@ -28,6 +29,7 @@
     top: $base-size;
     font-size: ($base-size * 1.5);
     transition: $transition;
+    margin-left: 1rem;
   }
 
   &__base-price {
@@ -52,18 +54,15 @@
   }
 
   &__wrapper {
-    @include flex(row, center, space-between);
     animation: flipdown 0.5s ease both;
-    @include flex(column, flex-start, center);
-
-    // @include accordion-closed();
+    @include accordion-closed();
   }
 
   &__order {
     width: 100%;
     // opacity: 0;
     transition: opacity 200ms;
-    background-color: pink;
+    margin-bottom: 2rem;
   }
 
   &__customize {
@@ -71,12 +70,12 @@
     width: 100%;
     height: 60px;
     cursor: pointer;
-    
+
     p {
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: $font-semibold;
-      position: relative;  
+      position: relative;
     }
 
     div {
@@ -90,14 +89,12 @@
       font-size: 20px;
       margin-left: 1rem;
     }
-    
   }
 
   &__params {
     margin: 0 0 ($base-size * 3) 0;
     padding: 0;
     list-style-type: none;
-    background-color: red;
   }
 
   &__params-title {
@@ -106,20 +103,19 @@
     text-transform: uppercase;
   }
 
-
   &__total-price {
     font-size: 14px;
     font-weight: $font-bold;
     text-transform: uppercase;
+    margin: $base-size 0;
   }
 
   &__images {
     position: relative;
     height: 60%;
-   
+
     transition: opacity 200ms;
     padding: calc($base-size * 2) 0;
-    
 
     &.small {
       width: 220px;
@@ -153,12 +149,10 @@
   }
 }
 
-.widget-amount {
-  input {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    margin: 0 ($base-size * 0.5);
-    padding: 0;
-  }
+.amount-inpun {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: 0 ($base-size * 0.5);
+  padding: 0;
 }
