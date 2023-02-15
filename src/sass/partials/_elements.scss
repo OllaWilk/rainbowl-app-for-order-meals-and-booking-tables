@@ -37,45 +37,64 @@ select {
   padding: $base-size;
 }
 
+select.minimal {
+  background-image: linear-gradient(45deg, transparent 50%, $color-dark 50%),
+    linear-gradient(135deg, $color-dark 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 16px) calc(1em + 10px),
+    calc(100% - 11px) calc(1em + 10px), calc(100% - 2.5em) 0;
+  background-size: 5px 5px, 5px 5px, 1px 100%;
+  background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+  background-size: 5px 5px, 5px 5px, 1px 100%;
+  background-repeat: no-repeat;
+  border-color: $color-second;
+  outline: 0;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
 .checkbox {
   display: block;
   position: relative;
-  padding-left: ($base-size * 2);
   margin-bottom: $base-size;
   user-select: none;
-
-  label {
-    cursor: pointer;
-  }
+  min-width: 250px;
+  border: 1px solid $color-dark;
+  padding: 1rem;
+  border-radius: $radius;
 
   input {
     position: absolute;
     opacity: 0;
     height: 0;
     width: 0;
-    cursor: pointer;
   }
 
   &__checkmark {
     position: absolute;
-    top: 4px;
+    top: 0;
     left: 0;
-    height: 16px;
-    width: 16px;
-    border: 1px solid $color-dark;
-    border-radius: $radius;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
 
     &:after {
       content: '';
       position: absolute;
       display: none;
-      width: 9px;
-      height: 5px;
-      border-left: 2px solid $color-dark;
-      border-bottom: 2px solid $color-dark;
-      transform: rotate(-45deg);
-      top: 4px;
-      left: 3px;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $color-second;
+      top: 0;
+      right: 0;
+      box-sizing: border-box;
+      // background-color: $color-second;
     }
   }
 

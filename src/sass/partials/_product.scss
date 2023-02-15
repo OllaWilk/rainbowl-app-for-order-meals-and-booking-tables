@@ -1,19 +1,16 @@
 .product {
   &__background-menu {
     background-color: $color-bkg-grey;
-    cursor: pointer;
   }
 
   &__wrap-header {
     @include flex(row, center, space-between);
-    // height: 70vh;
   }
 
   &__header {
     @include flex(column, flex-start, space-between);
-    width: 33.33%;
-    height: 100%;
     padding: 2rem 0;
+    width: 33.33%;
   }
 
   &__name {
@@ -23,13 +20,8 @@
   }
 
   &__icon {
-    position: absolute;
-    color: $color-main;
-    padding-left: $base-size;
-    top: $base-size;
-    font-size: ($base-size * 1.5);
+    font-size: ($base-size * 1.2);
     transition: $transition;
-    margin-left: 1rem;
   }
 
   &__base-price {
@@ -59,8 +51,6 @@
   }
 
   &__order {
-    width: 100%;
-    // opacity: 0;
     transition: opacity 200ms;
     margin-bottom: 2rem;
   }
@@ -83,24 +73,48 @@
       height: 1px;
       background-color: $color-dark;
     }
-
-    .fa-chevron-down {
-      object-fit: cover;
-      font-size: 20px;
-      margin-left: 1rem;
-    }
   }
 
   &__params {
     margin: 0 0 ($base-size * 3) 0;
     padding: 0;
     list-style-type: none;
+    @include flex(row, flex-start, space-between);
+    width: 100%;
+    flex-wrap: wrap;
   }
 
   &__params-title {
     font-size: 14px;
     font-weight: $font-bold;
     text-transform: uppercase;
+  }
+
+  .checkboxes-wrap {
+    @include flex(row, center, space-between);
+    flex-wrap: wrap;
+    padding: 1rem 0;
+  }
+
+  #selects-option {
+    position: relative;
+    cursor: pointer;
+
+    & select {
+      // appearance: none;
+      cursor: pointer;
+      width: 250px;
+      height: 55.8px;
+      background-color: transparent;
+      font-family: inherit;
+      display: inline-block;
+      margin: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
   }
 
   &__total-price {
@@ -112,19 +126,18 @@
 
   &__images {
     position: relative;
-    height: 60%;
+    width: 500px;
+    height: 500px;
 
     transition: opacity 200ms;
     padding: calc($base-size * 2) 0;
 
-    &.small {
-      width: 220px;
-      height: 220px;
-    }
-
     > img {
+      position: absolute;
+      top: 0;
       object-fit: cover;
       height: 100%;
+      width: 100%;
       opacity: 0;
 
       &.active {
@@ -138,21 +151,18 @@
       @include accordion-open();
     }
 
-    .product__order,
-    .product__images {
-      opacity: 1;
-    }
-
     .product__icon {
       transform: rotate(180deg);
     }
   }
 }
 
-.amount-inpun {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  margin: 0 ($base-size * 0.5);
-  padding: 0;
+.amount {
+  .amount-inpun {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin: 0 ($base-size * 0.5);
+    padding: 0;
+  }
 }
