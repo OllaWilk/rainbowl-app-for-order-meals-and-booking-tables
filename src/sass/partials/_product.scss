@@ -20,13 +20,8 @@
   }
 
   &__icon {
-    position: absolute;
-    color: $color-main;
-    padding-left: $base-size;
-    top: $base-size;
-    font-size: ($base-size * 1.5);
+    font-size: ($base-size * 1.2);
     transition: $transition;
-    margin-left: 1rem;
   }
 
   &__base-price {
@@ -79,12 +74,6 @@
       width: 40vw;
       height: 1px;
       background-color: $color-dark;
-    }
-
-    .fa-chevron-down {
-      object-fit: cover;
-      font-size: 20px;
-      margin-left: 1rem;
     }
   }
 
