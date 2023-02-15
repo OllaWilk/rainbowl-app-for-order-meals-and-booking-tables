@@ -1,19 +1,16 @@
 .product {
   &__background-menu {
     background-color: $color-bkg-grey;
-    cursor: pointer;
   }
 
   &__wrap-header {
     @include flex(row, center, space-between);
-    // height: 70vh;
   }
 
   &__header {
     @include flex(column, flex-start, space-between);
-    width: 33.33%;
-    height: 100%;
     padding: 2rem 0;
+    width: 33.33%;
   }
 
   &__name {
@@ -112,19 +109,18 @@
 
   &__images {
     position: relative;
-    height: 60%;
+    width: 500px;
+    height: 500px;
 
     transition: opacity 200ms;
     padding: calc($base-size * 2) 0;
 
-    &.small {
-      width: 220px;
-      height: 220px;
-    }
-
     > img {
+      position: absolute;
+      top: 0;
       object-fit: cover;
       height: 100%;
+      width: 100%;
       opacity: 0;
 
       &.active {
