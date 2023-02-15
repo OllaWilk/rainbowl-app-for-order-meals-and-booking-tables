@@ -1,0 +1,31 @@
+.navigation {
+  position: relative;
+
+  &_list {
+    @include flex(row, center, space-between);
+
+    @include l-max {
+      display: none;
+    }
+
+    li {
+      @include flex(row, center, space-between);
+      transition: $transition;
+      cursor: pointer;
+
+      a {
+        color: $color-dark;
+        height: 100%;
+              
+        margin: 0 ($base-size * 2 );
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {  
+          border-bottom: 2px solid $color-dark;
+          font-weight: $font-semibold;
+        }
+      }             
+    }
+  }
+}

@@ -1,1 +1,32 @@
 /* Variables */
+
+$color-light: #fff;
+$color-dark: #3a3a3a;
+$color-main: #b4d2b8;
+$color-second: #47856c;
+$color-bkg-grey: #f7f7f7;
+
+
+$font-text: 'Poppins', sans-serif;
+
+/* Font weight */
+
+$font-light: 300;
+$font-normal: 400;
+$font-semibold: 600;
+$font-bold: 700;
+
+/* Response */
+
+$screen-xxl: 1400px;
+$screen-xl: 1200px;
+$screen-l: 992px;
+$screen-md: 768px;
+$screen-sm: 576px;
+
+/* Helpers */
+
+$transition: all 0.3s;
+$radius: 4px;
+
+$base-size: 14px;

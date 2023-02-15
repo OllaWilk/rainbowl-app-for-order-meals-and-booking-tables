@@ -1,0 +1,14 @@
+footer {
+  background-color: $color-dark;
+  @include flex(row, center, space-between);
+
+  p,
+  a {
+    color: gray;
+    padding: $base-size 3rem;
+  }
+
+  .icon {
+    margin-left: 1rem;
+  }
+}
