@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=s, initial-scale=1.0">
+  <title>RainBowl shake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://kit.fontawesome.com/fb8cba6040.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="logo">
+          <img src="./images/logo.svg" alt="My Happy loggo" />
+          <div>
+            <p class="logo__subtitle">make your</p>
+            <h1 class="logo__title">rain<span>Bowl</span></h1>
+          </div>
+        </div>
+        <nav class="navigation">
+          <ul class="navigation_list">
+            <li> <a href="/home">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/reservation">Reservation</a></li>
+            <li><a href="/info">Info</a></li>
+          </ul>
+        </nav>
+        <div class="cart ">
+          <div class="cart__summary">
+            <div class="cart__icon-wrap">
+              <span class="cart__total-number">0</span>
+              <i class="fas fa-shopping-cart cart__icon"></i>
+            </div>
+            <span class="cart__total-price">Total price: <strong>$0</strong></span>
+          </div>
+          <div class="cart__content">
+            <form class="cart__order">
+              <ul class="cart__order-summary">
+                <li>
+                  <div class="widget-amount">
+                    <!-- WIDGET AMOUNT -->
+                    <a href="#less" class="btn-quantity btn-quantity--lt">
+                      <i class="fas fa-minus"></i>
+                    </a>
+                    <input type="text" class="amount" value="1">
+                    <a href="#more" class="btn-quantity btn-quantity--lt">
+                      <i class="fas fa-plus"></i>
+                    </a>
+                  </div>
+                  <div class="cart__product">
+                    <div class="cart__product-header">
+                      <span class="cart__product-name">Banana</span>
+                      <span>$<srtong class="cart__product-price">27</srtong></span>
+                    </div>
+                  </div>
+                  <ul class="cart__action-buttons">
+                    <li>
+                      <a href="#remove">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="cart__order-price">
+                <li>
+                  <span class="cart__order-price-name">Subtotal:</span>
+                  <span class="cart__order-price-sum">$0</span>
+                </li>
+                <li>
+                  <span class="cart__order-price-name">Delivery:</span>
+                  <span class="cart__order-price-sum">$0</span>
+                </li>
+                <li>
+                  <span class="cart__order-price-name">Total:</span>
+                  <span class="cart__order-price-sum">$0</span>
+                </li>
+              </ul>
+              <div class="cart__order-confirmation">
+                <input type="tel" name="phone" placeholder="Your phone">
+                <input type="text" name="address" placeholder="Your address">
+                <button type="submit" class="btn-secondary">Order</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="product-list" class="product-list "></div>
+  <!-- PRODUCT -->
+  <script id="template-menu-product" type="text/x-handlebars-template">
+    <article class="product">
+      <!-- container for products -->
+      <div class="product__background-menu">
+        <div class="product__wrap-header container">
+          <header class="product__header">
+            <h3 class="product__name">{{ name }}</h3>
+            <!-- PRODUCT DESCRIPTION -->
+            <div class="product__description">
+              <p>{{{ description }}}</p>
+            </div>
+            <p class="product__base-price">$ {{ price }}</p>
+            <p class="product__allergens">Product may contains soy, egg and milk ingredients.</br> May contain
+              traces of tree nuts. </p>
+          </header>
+            <!-- PRODUCT IMAGES -->
+          <div class="product__images">
+            {{#each images}}
+            {{{ this }}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT DETAILS -->
+      <div class="product__customize container">
+        <p>Customize your bowl</p>
+        <div></div>
+        <p class="product__icon">
+          <i class="fa-solid fa-chevron-down"></i>
+        </p>
+      </div>
+      <!-- PRODUCT ACCORDION -->
+      <div class="product__wrapper container active">
+        <form class="product__order">
+          <ul class="product__params">
+            <!-- PARAMS -->
+            {{#each params as |param paramId| }}
+            {{#ifEquals type "checkboxes"}}
+            <!-- CHECKBOXES -->
+            <li id="checkboxes-options">
+              <h3 class="product__params-title">{{{ label }}}</h3>
+              <div class="checkboxes-wrap">
+              {{#each options}}
+                <div class="checkbox"> <!-- checkbox -->
+                  <label>
+                    <input type="checkbox" name="{{ paramId }}" value="{{ @key }}" id="{{ @key }}" {{#if default}}checked{{/if}}>
+                    {{{ label }}} (${{{ price }}})
+                    <span class="checkbox__checkmark"></span>
+                  </label>
+                </div>
+                {{/each}}
+              </div>
+            </li>
+            {{/ifEquals}}
+            {{#ifEquals type "radios"}}
+            <!-- RADIOS -->
+            <li id="radios-options">
+              <h3 class="product__params-title">{{{ label }}}</h3>
+              {{#each options}}
+              <div class="checkbox checkbox--round"> <!-- radio -->
+                <label>
+                  {{{ label }}} (${{{ price }}})
+                  <input type="radio" name="{{ paramId }}" value="{{ @key }}" id="{{ @key }}" {{#if default}}checked{{/if}}>
+                  <span class="checkbox__checkmark"></span>
+                </label>
+              </div>
+              {{/each}}
+            </li>
+            {{/ifEquals}}
+            {{#ifEquals type "select"}}
+            <!-- SELECT -->
+            <li id="selects-option">
+              <h3 class="product__params-title">{{{ label }}}</h3>
+              <select name="{{ paramId }}" class="minimal">
+                {{#each options}}
+                <option value="{{ @key }}" {{#if default}}selected{{/if}}>{{{ label }}} ($ {{{ price }}} ) </option>
+                {{/each}}
+              </select>
+            </li>
+            {{/ifEquals}}
+            {{/each}}
+          </ul>
+          <div class="amount">
+            <!-- controls -->
+            <div class="widget-amout">
+              <!-- widget amount -->
+              <h3 class="product__params-title">Select quantity</h3>
+              <a href="less" class="btn-quantity">-</a>
+              <input type="text" class="amount-inpun" value="1">
+              <a href="more" class="btn-quantity">+</a>
+            </div>
+            <p class="product__total-price">Total: <span>{{{price}}}</span> $</p>
+            <div>
+              <!-- ADD TO CART -->
+              <a href="#add-to-cart" class="btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </article>
+  </script>
+  <footer>
+    <p>Hi, my name is Alex Wilk and this is my portfolio application made in Vanilla Js, Express.js, HTML and
+      Sass.</p>
+    <a href="https://github.com/OllaWilk/6_rainbowl_shop"> Please, check out my github
+      <i class="icon fa-brands fa-github"></i>
+    </a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
