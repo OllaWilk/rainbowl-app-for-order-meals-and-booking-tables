@@ -130,6 +130,7 @@
           <i class="fa-solid fa-chevron-down"></i>
         </p>
       </div>
+      <!-- PRODUCT ACCORDION -->
       <div class="product__wrapper container active">
         <form class="product__order">
           <ul class="product__params">
@@ -137,22 +138,24 @@
             {{#each params as |param paramId| }}
             {{#ifEquals type "checkboxes"}}
             <!-- CHECKBOXES -->
-            <li>
+            <li id="checkboxes-options">
               <h3 class="product__params-title">{{{ label }}}</h3>
+              <div class="checkboxes-wrap">
               {{#each options}}
-              <div class="checkbox"> <!-- checkbox -->
-                <label>
-                  <input type="checkbox" name="{{ paramId }}" value="{{ @key }}" id="{{ @key }}" {{#if default}}checked{{/if}}>
-                  <span class="checkbox__checkmark"></span>
-                  {{{ label }}} (${{{ price }}})
-                </label>
+                <div class="checkbox"> <!-- checkbox -->
+                  <label>
+                    <input type="checkbox" name="{{ paramId }}" value="{{ @key }}" id="{{ @key }}" {{#if default}}checked{{/if}}>
+                    {{{ label }}} (${{{ price }}})
+                    <span class="checkbox__checkmark"></span>
+                  </label>
+                </div>
+                {{/each}}
               </div>
-              {{/each}}
             </li>
             {{/ifEquals}}
             {{#ifEquals type "radios"}}
             <!-- RADIOS -->
-            <li>
+            <li id="radios-options">
               <h3 class="product__params-title">{{{ label }}}</h3>
               {{#each options}}
               <div class="checkbox checkbox--round"> <!-- radio -->
@@ -167,11 +170,11 @@
             {{/ifEquals}}
             {{#ifEquals type "select"}}
             <!-- SELECT -->
-            <li>
+            <li id="selects-option">
               <h3 class="product__params-title">{{{ label }}}</h3>
-              <select name="{{ paramId }}">
+              <select name="{{ paramId }}" class="minimal">
                 {{#each options}}
-                <option value="{{ @key }}" {{#if default}}selected{{/if}}>{{{ label }}} (${{{ price }}})</option>
+                <option value="{{ @key }}" {{#if default}}selected{{/if}}>{{{ label }}} ($ {{{ price }}} ) </option>
                 {{/each}}
               </select>
             </li>

@@ -21,6 +21,19 @@ dataSource.products = {
       '<img class="ingredients-almounds " src="images/ingredients/almound.svg" alt="almound">',
     ],
     params: {
+      ingredients: {
+        label: 'Ingredients',
+        type: 'checkboxes',
+        options: {
+          vanilla: { label: 'Vanilla', price: 3 },
+          orange: { label: 'Orange', price: 4, default: true },
+          banana: { label: 'Banana', price: 5, default: true },
+          kivi: { label: 'kivi', price: 3, default: true },
+          blueberry: { label: 'Cacao', price: 4 },
+          stravberry: { label: 'Strawberry', price: 3 },
+          almound: { label: 'Almound', price: 3 },
+        },
+      },
       dairy: {
         label: 'Dairy',
         type: 'radios',
@@ -50,19 +63,7 @@ dataSource.products = {
           sugarfree: { label: 'Sugarr free', price: 0 },
         },
       },
-      ingredients: {
-        label: 'Ingredients',
-        type: 'checkboxes',
-        options: {
-          vanilla: { label: 'Vanilla', price: 3 },
-          orange: { label: 'Orange', price: 4, default: true },
-          banana: { label: 'Banana', price: 5, default: true },
-          kivi: { label: 'kivi', price: 3, default: true },
-          blueberry: { label: 'Cacao', price: 4 },
-          stravberry: { label: 'Strawberry', price: 3 },
-          almound: { label: 'Almound', price: 3 },
-        },
-      },
+
       size: {
         label: 'size',
         type: 'select',
@@ -96,6 +97,23 @@ dataSource.products = {
       '<img class="ingredients-almound " src="images/ingredients/almound.svg" alt="almound">',
     ],
     params: {
+      ingredients: {
+        label: 'Ingredients',
+        type: 'checkboxes',
+        options: {
+          apple: { label: 'Apple', price: 1, default: true },
+          chocolate: { label: 'Chocolate', price: 3, default: true },
+          vanilla: { label: 'Vanilla', price: 3 },
+          hezelnut: { label: 'Hezelnut', price: 5 },
+          orange: { label: 'Orange', price: 3 },
+          banana: { label: 'Banana', price: 4 },
+          kivi: { label: 'Kivi', price: 3 },
+          blueberry: { label: 'Blueberry', price: 3 },
+          strawberry: { label: 'Strawberry', price: 3 },
+          cinnamon: { label: 'Cinnamon & Spice', price: 2.5 },
+          almound: { label: 'Almound', price: 3 },
+        },
+      },
       dairy: {
         label: 'Dairy',
         type: 'radios',
@@ -114,23 +132,6 @@ dataSource.products = {
           honey: { label: 'Honey', price: 5 },
           sugar: { label: 'Sugar', price: 4 },
           sugarfree: { label: 'Sugar free', price: 0, default: true },
-        },
-      },
-      ingredients: {
-        label: 'Ingredients',
-        type: 'checkboxes',
-        options: {
-          apple: { label: 'Apple', price: 1, default: true },
-          chocolate: { label: 'Chocolate', price: 3, default: true },
-          vanilla: { label: 'Vanilla', price: 3 },
-          hezelnut: { label: 'Hezelnut', price: 5 },
-          orange: { label: 'Orange', price: 3 },
-          banana: { label: 'Banana', price: 4 },
-          kivi: { label: 'Kivi', price: 3 },
-          blueberry: { label: 'Blueberry', price: 3 },
-          strawberry: { label: 'Strawberry', price: 3 },
-          cinnamon: { label: 'Cinnamon & Spice', price: 2.5 },
-          almound: { label: 'Almound', price: 3 },
         },
       },
       size: {
@@ -162,7 +163,9 @@ dataSource.products = {
         type: 'radios',
         options: {
           brocoliSoup: {
-            label: 'Broccoli Cheese Soup',
+            label:
+              // eslint-disable-next-line quotes
+              "Broccoli cheddar soup is SO satisfying! It's loaded with fresh broccoli, and creamy thanks to a potato and cheddar cheese. ",
             price: 0,
             default: true,
           },
