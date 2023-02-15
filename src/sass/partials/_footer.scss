@@ -1,9 +1,14 @@
 footer {
-  background-color: $color-main;
-  @include flex(row, center, center);
+  background-color: $color-dark;
+  @include flex(row, center, space-between);
 
-  p {
-    padding: $base-size;
-    cursor: pointer;
+  p,
+  a {
+    color: gray;
+    padding: $base-size 3rem;
+  }
+
+  .icon {
+    margin-left: 1rem;
   }
 }
