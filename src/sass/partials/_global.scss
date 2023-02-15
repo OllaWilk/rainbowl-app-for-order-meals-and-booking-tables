@@ -1,1 +1,40 @@
-/* GLOBAL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-light;
+  font-family: $font-text;
+  font-size: $base-size;
+  line-height: 1.7;
+  font-weight: $font-normal;
+  color: $color-dark;
+}
+
+.container {
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include sm {
+    max-width: 540px;
+  }
+
+  @include md {
+    max-width: 720px;
+  }
+
+  @include l {
+    max-width: 960px;
+  }
+
+  @include xl {
+    max-width: 1200px;
+  }
+}
