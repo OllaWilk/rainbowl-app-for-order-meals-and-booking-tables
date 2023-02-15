@@ -152,9 +152,9 @@ dataSource.products = {
       // eslint-disable-next-line quotes
       "When there's just too much on your mind, that's when the warm, uncomplicated goodness of soup hits the spot.",
     images: [
-      '<img class="soup-broccoli active" src="images/soups/broccoli.svg">',
+      '<img class="soup-broccoli " src="images/soups/broccoli.svg">',
       '<img class="soup-chili " src="images/soups/chilisoup.svg">',
-      '<img class="soup-pumpkin " src="images/soups/pumpkin.svg">',
+      '<img class="soup-pumpkin active" src="images/soups/pumpkin.svg">',
     ],
     params: {
       soups: {
