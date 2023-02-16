@@ -1,3 +1,5 @@
+/* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
+
 {
   ('use strict');
 
@@ -119,8 +121,10 @@
     }
 
     processOrder() {
-      // const thisProduct = this;
-      console.log('process order');
+      const thisProduct = this;
+
+      const formData = utils.serializeFormToObject(thisProduct.form);
+      console.log('formData', formData);
     }
   }
   console.log('test');

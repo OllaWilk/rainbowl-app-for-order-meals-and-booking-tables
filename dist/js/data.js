@@ -39,7 +39,7 @@ dataSource.products = {
         type: 'radios',
         options: {
           milk: { label: 'Milk', price: 0, default: true },
-          oat: { label: 'Coconut milk', price: 3 },
+          coconut: { label: 'Coconut milk', price: 3 },
           almound: { label: 'Almound milk', price: 3 },
         },
       },
