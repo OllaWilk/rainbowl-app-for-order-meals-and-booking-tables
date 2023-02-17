@@ -3,7 +3,7 @@ const dataSource = {}; // eslint-disable-line no-unused-vars
 dataSource.products = {
   chiaPudding: {
     name: 'RainBowl Chia Pudding',
-    price: 25,
+    price: 30,
     description:
       'This Rainbowl Chia Pudding not only satisfies a sweet tooth, but it is full of healthy antioxidant-rich foods. Chia is an increasingly popular food ingredient among consumers and manufacturers. The nutrient-rich seeds are good sources of α-linolenic acid (an omega-3 fatty acid), fiber, protein, vitamins, minerals, and antioxidants, prompting claims that chia is “superfood.',
     images: [
@@ -47,7 +47,7 @@ dataSource.products = {
         label: 'Flavour',
         type: 'radios',
         options: {
-          oat: { label: 'Oat', price: 3 },
+          oat: { label: 'Oat', price: 0 },
           mint: { label: 'Mint', price: 5 },
           chocolate: { label: 'Chocolate', price: 4 },
           acai: { label: 'Acai Powder', price: 5, default: true },
@@ -63,7 +63,6 @@ dataSource.products = {
           sugarfree: { label: 'Sugarr free', price: 0 },
         },
       },
-
       size: {
         label: 'size',
         type: 'select',
