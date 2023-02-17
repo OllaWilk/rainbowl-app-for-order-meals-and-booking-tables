@@ -1,3 +1,5 @@
+/* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
+
 {
   ('use strict');
 
@@ -12,10 +14,19 @@
       clickable: '.product__customize',
       form: '.product__order',
       cartButton: '[href="#add-to-cart"]',
+      priceElem: '.product__base-price .price',
+      imageWrapper: '.product__images',
     },
     all: {
       menuProductsActive: '#product-list > .product.active',
       formInputs: 'input, select',
+    },
+  };
+
+  const classNames = {
+    menuProduct: {
+      wrapperActive: 'active',
+      imageVisible: 'active',
     },
   };
 
@@ -72,6 +83,14 @@
       thisProduct.cartButton = thisProduct.element.querySelector(
         select.menuProduct.cartButton
       );
+
+      thisProduct.priceElem = thisProduct.element.querySelector(
+        select.menuProduct.priceElem
+      );
+
+      thisProduct.imageWrapper = thisProduct.element.querySelector(
+        select.menuProduct.imageWrapper
+      );
     }
 
     toggleAcordion() {
@@ -119,11 +138,54 @@
     }
 
     processOrder() {
-      // const thisProduct = this;
-      console.log('process order');
+      const thisProduct = this;
+
+      /* read all data from the form */
+      const formData = utils.serializeFormToObject(thisProduct.form);
+
+      /* set variable price to equal thisProduct.data.price */
+      let price = thisProduct.data.price;
+
+      /* LOOP: for each paramId in thisproduct.data.params*/
+      for (let paramsId in thisProduct.data.params) {
+        /* save the element in thisProduct.data.params with key paramId as const param*/
+        const param = thisProduct.data.params[paramsId];
+
+        /* LOOP: for each optionId in param.options*/
+        for (let optionsId in param.options) {
+          /* save the element in param.options with key optionId as const option */
+          const option = param.options[optionsId];
+
+          /* IF: if option is selected and option is not default
+          ELSE IF: if option is not selected and option is default*/
+
+          const optionSelected =
+            formData.hasOwnProperty(paramsId) &&
+            formData[paramsId].indexOf(optionsId) > -1;
+
+          if (optionSelected && !option.default) {
+            price += option.price;
+            /* add price of option to variabe price */
+          } else if (!optionSelected && option.default) {
+            /* deduct price of option from price */
+            price -= option.price;
+          }
+
+          const img = thisProduct.imageWrapper.querySelector(
+            `.${paramsId}-${optionsId}`
+          );
+
+          if (optionSelected && img) {
+            img.classList.add(classNames.menuProduct.imageVisible);
+          } else if (img) {
+            img.classList.remove(classNames.menuProduct.imageVisible);
+          }
+        }
+      }
+      /* set the contents of thisProduct.priceElem to be the value of variable price */
+      thisProduct.priceElem.innerHTML = price;
     }
   }
-  console.log('test');
 
   const app = {
     initMenu: function () {
