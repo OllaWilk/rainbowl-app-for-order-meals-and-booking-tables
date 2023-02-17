@@ -3,22 +3,23 @@ const dataSource = {}; // eslint-disable-line no-unused-vars
 dataSource.products = {
   chiaPudding: {
     name: 'RainBowl Chia Pudding',
-    price: 25,
+    price: 30,
     description:
       'This Rainbowl Chia Pudding not only satisfies a sweet tooth, but it is full of healthy antioxidant-rich foods. Chia is an increasingly popular food ingredient among consumers and manufacturers. The nutrient-rich seeds are good sources of α-linolenic acid (an omega-3 fatty acid), fiber, protein, vitamins, minerals, and antioxidants, prompting claims that chia is “superfood.',
     images: [
       '<img class="active" src="images/flavour/bowl.svg" alt="bowl">',
-      '<img class="flavour-oat" src="images/flavour/oat.svg" alt="oat">',
-      '<img class="flavour-acai active" src="images/flavour/acai.svg" alt="acai">',
-      '<img class="flavour-cacao " src="images/flavour/cacao.svg" alt="cacao">',
+      '<img class="flavour-milky" src="images/flavour/milky.svg" alt="milky">',
+      '<img class="flavour-acai" src="images/flavour/acai.svg" alt="acai">',
+      '<img class="flavour-cocoa" src="images/flavour/cocoa.svg" alt="cocoa">',
       '<img class="flavour-mint " src="images/flavour/mint.svg" alt="mint">',
       '<img class="ingredients-vanilla " src="images/ingredients/vanilla.svg" alt="vanilla">',
-      '<img class="ingredients-oranges active" src="images/ingredients/orange.svg" alt="orange">',
-      '<img class="ingredients-bananas active" src="images/ingredients/banana.svg" alt="banana">',
-      '<img class="ingredients-kivi active" src="images/ingredients/kivi.svg" alt="kivi">',
-      '<img class="ingredients-blueberries " src="images/ingredients/blueberry.svg" alt="blueberry">',
-      '<img class="ingredients-strawberries " src="images/ingredients/strawberry.svg" alt="strawberry">',
-      '<img class="ingredients-almounds " src="images/ingredients/almound.svg" alt="almound">',
+      '<img class="ingredients-orange " src="images/ingredients/orange.svg" alt="orange">',
+      '<img class="ingredients-banana " src="images/ingredients/banana.svg" alt="banana">',
+      '<img class="ingredients-kivi " src="images/ingredients/kivi.svg" alt="kivi">',
+      '<img class="ingredients-blueberry " src="images/ingredients/blueberry.svg" alt="blueberry">',
+      '<img class="ingredients-stravberry " src="images/ingredients/strawberry.svg" alt="strawberry">',
+      '<img class="ingredients-almound " src="images/ingredients/almound.svg" alt="almound">',
+      '<img class="ingredients-cinnamon " src="images/ingredients/cinnamon.svg" alt="cinnamon">',
     ],
     params: {
       ingredients: {
@@ -28,10 +29,11 @@ dataSource.products = {
           vanilla: { label: 'Vanilla', price: 3 },
           orange: { label: 'Orange', price: 4, default: true },
           banana: { label: 'Banana', price: 5, default: true },
-          kivi: { label: 'kivi', price: 3, default: true },
-          blueberry: { label: 'Cacao', price: 4 },
+          kivi: { label: 'Kivi', price: 3, default: true },
+          blueberry: { label: 'Blueberry', price: 4 },
           stravberry: { label: 'Strawberry', price: 3 },
           almound: { label: 'Almound', price: 3 },
+          cinnamon: { label: 'Cinnamon & Spice', price: 2 },
         },
       },
       dairy: {
@@ -39,7 +41,7 @@ dataSource.products = {
         type: 'radios',
         options: {
           milk: { label: 'Milk', price: 0, default: true },
-          oat: { label: 'Coconut milk', price: 3 },
+          coconut: { label: 'Coconut milk', price: 3 },
           almound: { label: 'Almound milk', price: 3 },
         },
       },
@@ -47,9 +49,9 @@ dataSource.products = {
         label: 'Flavour',
         type: 'radios',
         options: {
-          oat: { label: 'Oat', price: 3 },
+          milky: { label: 'Milky', price: 0 },
           mint: { label: 'Mint', price: 5 },
-          chocolate: { label: 'Chocolate', price: 4 },
+          cocoa: { label: 'Cocoa', price: 4 },
           acai: { label: 'Acai Powder', price: 5, default: true },
         },
       },
@@ -63,7 +65,6 @@ dataSource.products = {
           sugarfree: { label: 'Sugarr free', price: 0 },
         },
       },
-
       size: {
         label: 'size',
         type: 'select',
@@ -83,17 +84,17 @@ dataSource.products = {
       "Overnight oats are simply oats that are left to soak overnight instead of cooked in the morning, which makes them perfect for a quick, filling and nutritious breakfast. It's a bit like making cold-brew coffee instead of the regular cup of hot coffee in the morning. Our overnight oatmeals are also some of our favorite desserts. They are creamy, dreamy, and delicious.",
     images: [
       '<img class="active" src="images/flavour/bowl.svg" alt="bowl">',
-      '<img class="ingredients-oat active" src="images/ingredients/oat.svg" alt="oat">',
-      '<img class="ingredients-chocolate active" src="images/ingredients/chocolate.svg" alt="chocolate">',
+      '<img class="active" src="images/ingredients/oat.svg" alt="oat">',
+      '<img class="ingredients-chocolate " src="images/ingredients/chocolate.svg" alt="chocolate">',
       '<img class="ingredients-vanilla " src="images/ingredients/vanilla.svg" alt="vanilla">',
-      '<img class="ingredients-hezelnut active" src="images/ingredients/hezelnut.svg" alt="hezelnut">',
+      '<img class="ingredients-hezelnut " src="images/ingredients/hezelnut.svg" alt="hezelnut">',
       '<img class="ingredients-orange " src="images/ingredients/orange.svg" alt="orange">',
-      '<img class="ingredients-banana active" src="images/ingredients/banana.svg" alt="banana">',
+      '<img class="ingredients-banana " src="images/ingredients/banana.svg" alt="banana">',
       '<img class="ingredients-kivi " src="images/ingredients/kivi.svg" alt="kivi">',
-      '<img class="ingredients-apple active" src="images/ingredients/apple.svg" alt="apple">',
+      '<img class="ingredients-apple " src="images/ingredients/apple.svg" alt="apple">',
       '<img class="ingredients-blueberry " src="images/ingredients/blueberry.svg" alt="blueberry">',
       '<img class="ingredients-strawberry" src="images/ingredients/strawberry.svg" alt="strawberry">',
-      '<img class="ingredients-cinnamon active" src="images/ingredients/cinnamon.svg" alt="cinnamon">',
+      '<img class="ingredients-cinnamon " src="images/ingredients/cinnamon.svg" alt="cinnamon">',
       '<img class="ingredients-almound " src="images/ingredients/almound.svg" alt="almound">',
     ],
     params: {
@@ -110,7 +111,7 @@ dataSource.products = {
           kivi: { label: 'Kivi', price: 3 },
           blueberry: { label: 'Blueberry', price: 3 },
           strawberry: { label: 'Strawberry', price: 3 },
-          cinnamon: { label: 'Cinnamon & Spice', price: 2.5 },
+          cinnamon: { label: 'Cinnamon & Spice', price: 2 },
           almound: { label: 'Almound', price: 3 },
         },
       },
@@ -153,31 +154,31 @@ dataSource.products = {
       // eslint-disable-next-line quotes
       "When there's just too much on your mind, that's when the warm, uncomplicated goodness of soup hits the spot.",
     images: [
-      '<img class="soup-broccoli " src="images/soups/broccoli.svg">',
-      '<img class="soup-chili " src="images/soups/chilisoup.svg">',
-      '<img class="soup-pumpkin active" src="images/soups/pumpkin.svg">',
+      '<img class="soups-broccoli active" src="images/soups/broccoli.svg">',
+      '<img class="soups-chili " src="images/soups/chilisoup.svg">',
+      '<img class="soups-pumpkin " src="images/soups/pumpkin.svg">',
     ],
     params: {
       soups: {
         label: 'Choose your soup',
         type: 'radios',
         options: {
-          brocoliSoup: {
+          broccoli: {
             label:
               // eslint-disable-next-line quotes
               "Broccoli cheddar soup is SO satisfying! It's loaded with fresh broccoli, and creamy thanks to a potato and cheddar cheese. ",
-            price: 0,
+            price: 30,
             default: true,
           },
-          chiliSoup: {
+          chili: {
             label:
               'Chili Soup with ground meat and chili powder, plus beans and tomato.',
-            price: 0,
+            price: 30,
           },
-          pumpkinSoup: {
+          pumpkin: {
             label:
               'Creamy pumpkin soup, savouriness from the broth, garlic and onion. ',
-            price: 0,
+            price: 30,
           },
         },
       },

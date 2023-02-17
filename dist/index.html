@@ -109,7 +109,7 @@
             <div class="product__description">
               <p>{{{ description }}}</p>
             </div>
-            <p class="product__base-price">$ {{ price }}</p>
+            <p class="product__base-price">$<span class="price">{{{ price }}} </span></p>
             <p class="product__allergens">Product may contains soy, egg and milk ingredients.</br> May contain
               traces of tree nuts. </p>
           </header>
@@ -190,7 +190,6 @@
               <input type="text" class="amount-inpun" value="1">
               <a href="more" class="btn-quantity">+</a>
             </div>
-            <p class="product__total-price">Total: <span>{{{price}}}</span> $</p>
             <div>
               <!-- ADD TO CART -->
               <a href="#add-to-cart" class="btn-primary">Add to cart</a>
