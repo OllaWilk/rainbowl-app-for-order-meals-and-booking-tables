@@ -195,6 +195,9 @@
           }
         }
       }
+      /* multiply price by amount */
+      price *= thisProduct.amountWidget.value;
+
       /* set the contents of thisProduct.priceElem to be the value of variable price */
       thisProduct.priceElem.innerHTML = price;
     }
@@ -203,6 +206,12 @@
       const thisProduct = this;
 
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+
+      /* add listener (updated) on amountWidgetElement  and call processOrder */
+      thisProduct.amountWidgetElem.addEventListener('updated', () => {
+        thisProduct.processOrder();
+        console.log('klik');
+      });
     }
   }
 
@@ -230,8 +239,6 @@
       thisWidget.linkIncrease = thisWidget.element.querySelector(
         select.widgets.amount.linkIncrease
       );
-
-      console.log(thisWidget.linkDecrease);
     }
 
     setValue(value) {
@@ -242,10 +249,14 @@
 
       /* TODO Add validation */
 
+      /* assign the parsed value to newValue */
       thisWigdet.value = newValue;
 
       /* set new value of input */
       thisWigdet.input.value = thisWigdet.value;
+
+      /* call method announce */
+      thisWigdet.announce();
     }
 
     initActions() {
@@ -266,6 +277,14 @@
         e.preventDefault();
         thisWidget.setValue(thisWidget.value + 1);
       });
+    }
+
+    announce() {
+      const thisWidget = this;
+
+      const event = new Event('updated');
+
+      thisWidget.element.dispatchEvent(event);
     }
   }
 
