@@ -9,6 +9,7 @@
     },
     containerOf: {
       menu: '#product-list',
+      cart: '#cart',
     },
     menuProduct: {
       clickable: '.product__customize',
@@ -16,10 +17,21 @@
       cartButton: '[href="#add-to-cart"]',
       priceElem: '.product__base-price .price',
       imageWrapper: '.product__images',
+      amountWidget: '.widget-amout',
     },
     all: {
       menuProductsActive: '#product-list > .product.active',
       formInputs: 'input, select',
+    },
+    widgets: {
+      amount: {
+        input: 'input.amount-inpun',
+        linkDecrease: 'a[href="#less"]',
+        linkIncrease: 'a[href="#more"]',
+      },
+    },
+    cart: {
+      toggleTrigger: '.cart__summary',
     },
   };
 
@@ -27,6 +39,17 @@
     menuProduct: {
       wrapperActive: 'active',
       imageVisible: 'active',
+    },
+    cart: {
+      wrapperActive: 'active',
+    },
+  };
+
+  const settings = {
+    amountWidget: {
+      defaultMin: 0,
+      defaultMax: 10,
+      defaultValue: 1,
     },
   };
 
@@ -44,21 +67,17 @@
       this.getElements();
       this.toggleAcordion();
       this.initOrderForm();
+      this.initAmountWidget();
       this.processOrder();
     }
 
     renderInMenu() {
+      const thisProduct = this;
       /* generate HTML with handlebars */
-      const generatedHTML = templates.menuProduct(this.data);
+      const generatedHTML = templates.menuProduct(thisProduct.data);
       /* conwert HTML text into HTML element */
+      thisProduct.element = utils.createDOMFromHTML(generatedHTML);
 
-      const createDOMfromHTML = function (stringHTML) {
-        let div = document.createElement('div');
-        div.innerHTML = stringHTML.trim();
-        return div.firstChild;
-      };
-
-      this.element = createDOMfromHTML(generatedHTML);
       /* find menu container */
       const menuContainer = document.querySelector(select.containerOf.menu);
       /* add element to menu */
@@ -90,6 +109,10 @@
 
       thisProduct.imageWrapper = thisProduct.element.querySelector(
         select.menuProduct.imageWrapper
+      );
+
+      thisProduct.amountWidgetElem = thisProduct.element.querySelector(
+        select.menuProduct.amountWidget
       );
     }
 
@@ -182,8 +205,132 @@
           }
         }
       }
+      /* multiply price by amount */
+      price *= thisProduct.amountWidget.value;
+
       /* set the contents of thisProduct.priceElem to be the value of variable price */
       thisProduct.priceElem.innerHTML = price;
+    }
+
+    initAmountWidget() {
+      const thisProduct = this;
+
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+
+      /* add listener (updated) on amountWidgetElement  and call processOrder */
+      thisProduct.amountWidgetElem.addEventListener('updated', () => {
+        thisProduct.processOrder();
+      });
+    }
+  }
+
+  class AmountWidget {
+    constructor(element) {
+      const thisWidget = this;
+
+      thisWidget.element = element;
+
+      thisWidget.getElements(element);
+      thisWidget.value = settings.amountWidget.defaultValue;
+      thisWidget.setValue(thisWidget.input.value);
+      thisWidget.initActions();
+    }
+
+    getElements(element) {
+      const thisWidget = this;
+
+      thisWidget.element = element;
+      thisWidget.input = thisWidget.element.querySelector(
+        select.widgets.amount.input
+      );
+      thisWidget.linkDecrease = thisWidget.element.querySelector(
+        select.widgets.amount.linkDecrease
+      );
+      thisWidget.linkIncrease = thisWidget.element.querySelector(
+        select.widgets.amount.linkIncrease
+      );
+    }
+
+    setValue(value) {
+      const thisWigdet = this;
+
+      /* conwert string into number */
+      const newValue = parseInt(value);
+
+      /* Add validation */
+      if (
+        thisWigdet.value !== newValue &&
+        newValue >= settings.amountWidget.defaultMin &&
+        newValue <= settings.amountWidget.defaultMax
+      ) {
+        /* assign the parsed value to newValue */
+        thisWigdet.value = newValue;
+      }
+      /* set new value of input */
+      thisWigdet.input.value = thisWigdet.value;
+
+      /* call method announce */
+      thisWigdet.announce();
+    }
+
+    initActions() {
+      const thisWidget = this;
+
+      /* add event listener on change on input and get value of input */
+      thisWidget.input.addEventListener('change', function () {
+        thisWidget.setValue(thisWidget.input.value);
+      });
+
+      /* add event listener on buttons and odd/add 1 after click */
+      thisWidget.linkDecrease.addEventListener('click', function (e) {
+        e.preventDefault();
+        thisWidget.setValue(thisWidget.value - 1);
+      });
+
+      thisWidget.linkIncrease.addEventListener('click', function (e) {
+        e.preventDefault();
+        thisWidget.setValue(thisWidget.value + 1);
+      });
+    }
+
+    announce() {
+      const thisWidget = this;
+
+      const event = new Event('updated');
+
+      thisWidget.element.dispatchEvent(event);
+    }
+  }
+
+  class Cart {
+    constructor(element) {
+      const thisCart = this;
+
+      thisCart.products = [];
+
+      thisCart.getElements(element);
+      thisCart.initActions();
+
+      console.log('new Cart', thisCart);
+    }
+
+    getElements(element) {
+      const thisCart = this;
+
+      thisCart.dom = {};
+      thisCart.dom.wrapper = element;
+
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
+        select.cart.toggleTrigger
+      );
+    }
+
+    initActions() {
+      const thisCart = this;
+
+      thisCart.dom.toggleTrigger.addEventListener('click', function () {
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+      });
     }
   }
 
@@ -198,10 +345,18 @@
       // eslint-disable-next-line no-undef
       this.data = dataSource;
     },
+    initCart: function () {
+      const thisApp = this;
+
+      const cartElem = document.querySelector(select.containerOf.cart);
+      console.log(cartElem);
+      thisApp.cart = new Cart(cartElem);
+    },
     init: function () {
       console.log('***START APP***');
       this.getData();
       this.initMenu();
+      this.initCart();
     },
   };
 
