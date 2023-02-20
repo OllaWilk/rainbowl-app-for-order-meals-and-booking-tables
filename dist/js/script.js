@@ -16,10 +16,18 @@
       cartButton: '[href="#add-to-cart"]',
       priceElem: '.product__base-price .price',
       imageWrapper: '.product__images',
+      amountWidget: '.widget-amout',
     },
     all: {
       menuProductsActive: '#product-list > .product.active',
       formInputs: 'input, select',
+    },
+    widgets: {
+      amount: {
+        input: 'input[name="amount"]',
+        linkDecrease: 'a[href="#less"]',
+        linkIncrease: 'a[href="#more"]',
+      },
     },
   };
 
@@ -27,6 +35,14 @@
     menuProduct: {
       wrapperActive: 'active',
       imageVisible: 'active',
+    },
+  };
+
+  const settings = {
+    amountWidget: {
+      defaultMin: 0,
+      defaultMax: 10,
+      defaultValue: 1,
     },
   };
 
@@ -44,6 +60,7 @@
       this.getElements();
       this.toggleAcordion();
       this.initOrderForm();
+      this.initAmountWidget();
       this.processOrder();
     }
 
@@ -90,6 +107,10 @@
 
       thisProduct.imageWrapper = thisProduct.element.querySelector(
         select.menuProduct.imageWrapper
+      );
+
+      thisProduct.amountWidgetElem = thisProduct.element.querySelector(
+        select.menuProduct.amountWidget
       );
     }
 
@@ -182,8 +203,100 @@
           }
         }
       }
+      /* multiply price by amount */
+      price *= thisProduct.amountWidget.value;
+
       /* set the contents of thisProduct.priceElem to be the value of variable price */
       thisProduct.priceElem.innerHTML = price;
+    }
+
+    initAmountWidget() {
+      const thisProduct = this;
+
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+
+      /* add listener (updated) on amountWidgetElement  and call processOrder */
+      thisProduct.amountWidgetElem.addEventListener('updated', () => {
+        thisProduct.processOrder();
+      });
+    }
+  }
+
+  class AmountWidget {
+    constructor(element) {
+      const thisWidget = this;
+
+      thisWidget.element = element;
+
+      thisWidget.getElements(element);
+      thisWidget.value = settings.amountWidget.defaultValue;
+      thisWidget.setValue(thisWidget.input.value);
+      thisWidget.initActions();
+    }
+
+    getElements(element) {
+      const thisWidget = this;
+
+      thisWidget.element = element;
+      thisWidget.input = thisWidget.element.querySelector(
+        select.widgets.amount.input
+      );
+      thisWidget.linkDecrease = thisWidget.element.querySelector(
+        select.widgets.amount.linkDecrease
+      );
+      thisWidget.linkIncrease = thisWidget.element.querySelector(
+        select.widgets.amount.linkIncrease
+      );
+    }
+
+    setValue(value) {
+      const thisWigdet = this;
+
+      /* conwert string into number */
+      const newValue = parseInt(value);
+
+      /* Add validation */
+      if (
+        thisWigdet.value !== newValue &&
+        newValue >= settings.amountWidget.defaultMin &&
+        newValue <= settings.amountWidget.defaultMax
+      ) {
+        /* assign the parsed value to newValue */
+        thisWigdet.value = newValue;
+      }
+      /* set new value of input */
+      thisWigdet.input.value = thisWigdet.value;
+
+      /* call method announce */
+      thisWigdet.announce();
+    }
+
+    initActions() {
+      const thisWidget = this;
+
+      /* add event listener on change on input and get value of input */
+      thisWidget.input.addEventListener('change', function () {
+        thisWidget.setValue(thisWidget.input.value);
+      });
+
+      /* add event listener on buttons and odd/add 1 after click */
+      thisWidget.linkDecrease.addEventListener('click', function (e) {
+        e.preventDefault();
+        thisWidget.setValue(thisWidget.value - 1);
+      });
+
+      thisWidget.linkIncrease.addEventListener('click', function (e) {
+        e.preventDefault();
+        thisWidget.setValue(thisWidget.value + 1);
+      });
+    }
+
+    announce() {
+      const thisWidget = this;
+
+      const event = new Event('updated');
+
+      thisWidget.element.dispatchEvent(event);
     }
   }
 

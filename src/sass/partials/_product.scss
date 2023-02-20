@@ -159,10 +159,10 @@
 
 .amount {
   .amount-inpun {
+    margin: 0 ($base-size * 0.5) $base-size ($base-size * 0.5);
     width: 30px;
     height: 30px;
     text-align: center;
-    margin: 0 ($base-size * 0.5);
     padding: 0;
   }
 }
