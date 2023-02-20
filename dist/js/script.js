@@ -9,6 +9,7 @@
     },
     containerOf: {
       menu: '#product-list',
+      cart: '#cart',
     },
     menuProduct: {
       clickable: '.product__customize',
@@ -24,10 +25,13 @@
     },
     widgets: {
       amount: {
-        input: 'input[name="amount"]',
+        input: 'input.amount-inpun',
         linkDecrease: 'a[href="#less"]',
         linkIncrease: 'a[href="#more"]',
       },
+    },
+    cart: {
+      toggleTrigger: '.cart__summary',
     },
   };
 
@@ -35,6 +39,9 @@
     menuProduct: {
       wrapperActive: 'active',
       imageVisible: 'active',
+    },
+    cart: {
+      wrapperActive: 'active',
     },
   };
 
@@ -65,17 +72,12 @@
     }
 
     renderInMenu() {
+      const thisProduct = this;
       /* generate HTML with handlebars */
-      const generatedHTML = templates.menuProduct(this.data);
+      const generatedHTML = templates.menuProduct(thisProduct.data);
       /* conwert HTML text into HTML element */
+      thisProduct.element = utils.createDOMFromHTML(generatedHTML);
 
-      const createDOMfromHTML = function (stringHTML) {
-        let div = document.createElement('div');
-        div.innerHTML = stringHTML.trim();
-        return div.firstChild;
-      };
-
-      this.element = createDOMfromHTML(generatedHTML);
       /* find menu container */
       const menuContainer = document.querySelector(select.containerOf.menu);
       /* add element to menu */
@@ -300,6 +302,38 @@
     }
   }
 
+  class Cart {
+    constructor(element) {
+      const thisCart = this;
+
+      thisCart.products = [];
+
+      thisCart.getElements(element);
+      thisCart.initActions();
+
+      console.log('new Cart', thisCart);
+    }
+
+    getElements(element) {
+      const thisCart = this;
+
+      thisCart.dom = {};
+      thisCart.dom.wrapper = element;
+
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
+        select.cart.toggleTrigger
+      );
+    }
+
+    initActions() {
+      const thisCart = this;
+
+      thisCart.dom.toggleTrigger.addEventListener('click', function () {
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+      });
+    }
+  }
+
   const app = {
     initMenu: function () {
       /* init new Product */
@@ -311,10 +345,18 @@
       // eslint-disable-next-line no-undef
       this.data = dataSource;
     },
+    initCart: function () {
+      const thisApp = this;
+
+      const cartElem = document.querySelector(select.containerOf.cart);
+      console.log(cartElem);
+      thisApp.cart = new Cart(cartElem);
+    },
     init: function () {
       console.log('***START APP***');
       this.getData();
       this.initMenu();
+      this.initCart();
     },
   };
 

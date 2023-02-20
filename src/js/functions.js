@@ -2,6 +2,12 @@
 
 const utils = {}; // eslint-disable-line no-unused-vars
 
+utils.createDOMFromHTML = function (htmlString) {
+  let div = document.createElement('div');
+  div.innerHTML = htmlString.trim();
+  return div.firstChild;
+};
+
 utils.createPropIfUndefined = function (obj, key, value = []) {
   if (!obj.hasOwnProperty(key)) {
     obj[key] = value;
@@ -33,7 +39,7 @@ utils.serializeFormToObject = function (form) {
         ) {
           utils.createPropIfUndefined(output, field.name);
           output[field.name].push(field.value);
-        } else if (!output[field.name]) output[field.name] = [];
+        }
       }
     }
   }
