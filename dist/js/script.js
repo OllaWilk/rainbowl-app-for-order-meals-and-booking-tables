@@ -38,6 +38,14 @@
     },
   };
 
+  const settings = {
+    amountWidget: {
+      defaultMin: 0,
+      defaultMax: 10,
+      defaultValue: 1,
+    },
+  };
+
   const templates = {
     menuProduct: Handlebars.compile(
       document.querySelector(select.handlebasTemplate.menuProduct).innerHTML
@@ -210,7 +218,6 @@
       /* add listener (updated) on amountWidgetElement  and call processOrder */
       thisProduct.amountWidgetElem.addEventListener('updated', () => {
         thisProduct.processOrder();
-        console.log('klik');
       });
     }
   }
@@ -222,6 +229,7 @@
       thisWidget.element = element;
 
       thisWidget.getElements(element);
+      thisWidget.value = settings.amountWidget.defaultValue;
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
     }
@@ -247,11 +255,15 @@
       /* conwert string into number */
       const newValue = parseInt(value);
 
-      /* TODO Add validation */
-
-      /* assign the parsed value to newValue */
-      thisWigdet.value = newValue;
-
+      /* Add validation */
+      if (
+        thisWigdet.value !== newValue &&
+        newValue >= settings.amountWidget.defaultMin &&
+        newValue <= settings.amountWidget.defaultMax
+      ) {
+        /* assign the parsed value to newValue */
+        thisWigdet.value = newValue;
+      }
       /* set new value of input */
       thisWigdet.input.value = thisWigdet.value;
 
