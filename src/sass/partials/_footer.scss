@@ -2,6 +2,9 @@ footer {
   background-color: $color-dark;
   @include flex(row, center, space-between);
 
+  @include md-max {
+    @include flex(column, center, center);
+  }
   p,
   a {
     color: gray;
