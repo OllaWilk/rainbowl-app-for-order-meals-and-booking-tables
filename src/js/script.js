@@ -6,6 +6,7 @@
   const select = {
     handlebasTemplate: {
       menuProduct: '#template-menu-product',
+      cartProduct: '#template-cart-product',
     },
     containerOf: {
       menu: '#product-list',
@@ -32,6 +33,7 @@
     },
     cart: {
       toggleTrigger: '.cart__summary',
+      productList: '.cart__order-summary',
     },
   };
 
@@ -56,6 +58,9 @@
   const templates = {
     menuProduct: Handlebars.compile(
       document.querySelector(select.handlebasTemplate.menuProduct).innerHTML
+    ),
+    cartProduct: Handlebars.compile(
+      document.querySelector(select.handlebasTemplate.cartProduct).innerHTML
     ),
   };
 
@@ -168,8 +173,6 @@
       const formData = utils.serializeFormToObject(thisProduct.form);
 
       thisProduct.params = {};
-
-      console.log(thisProduct.params);
 
       /* set variable price to equal thisProduct.data.price */
       let price = thisProduct.data.price;
@@ -339,8 +342,6 @@
 
       thisCart.getElements(element);
       thisCart.initActions();
-
-      // console.log('new Cart', thisCart);
     }
 
     getElements(element) {
@@ -351,6 +352,9 @@
 
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
         select.cart.toggleTrigger
+      );
+      thisCart.dom.productList = thisCart.dom.wrapper.querySelector(
+        select.cart.productList
       );
     }
 
@@ -363,6 +367,17 @@
     }
 
     add(menuProduct) {
+      const thisCart = this;
+
+      /* generate html code */
+      const generatedHTML = templates.cartProduct(menuProduct);
+
+      /* convert generatedHTML to DOM elements */
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+
+      /* add element to cart */
+      thisCart.dom.productList.appendChild(generatedDOM);
+
       console.log('adding product', menuProduct);
     }
   }
