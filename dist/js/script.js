@@ -343,6 +343,7 @@
     add(menuProduct) {
       console.log(menuProduct);
     }
+
   }
 
   const app = {
