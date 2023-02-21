@@ -4,6 +4,10 @@
   z-index: 99990;
   width: 400px;
 
+  @include sm-max {
+    max-width: 50px;
+  }
+
   &.active {
     .cart__content {
       position: absolute;
@@ -11,15 +15,40 @@
       @include accordion-open();
       background-color: $color-light;
       box-shadow: 0px 0px 4px $color-main;
+
+      @include sm-max {
+        right: 0;
+        padding: $base-size;
+        width: 90vw;
+        top: 200%;
+      }
     }
   }
 
   &__summary {
-    @include flex(row, center, space-around);
+    display: block;
+    @include flex(row, center, flex-end);
     text-transform: uppercase;
     cursor: pointer;
     width: 100%;
     padding: 2rem;
+
+    @include sm-max {
+      display: none;
+    }
+  }
+
+  &__summary_phone-size {
+    display: none;
+
+    @include sm-max {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  &__icon-wrap-phone-size {
+    border-right: none;
   }
 
   &__icon-wrap {
@@ -31,6 +60,10 @@
 
   &__total-price {
     padding-left: 16px;
+
+    strong {
+      margin-left: $base-size;
+    }
   }
 
   &__content {

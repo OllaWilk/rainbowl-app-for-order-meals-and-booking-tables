@@ -5,18 +5,36 @@
 
   &__wrap-header {
     @include flex(row, center, space-between);
+
+    @include md-max {
+      @include flex(column, center, center);
+    }
   }
 
   &__header {
     @include flex(column, flex-start, space-between);
     padding: 2rem 0;
     width: 33.33%;
+
+    @include md-max {
+      width: 100%;
+    }
   }
 
   &__name {
     font-weight: $font-light;
     font-size: 50px;
     line-height: 60px;
+
+    @include sm-max {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    @include md-max {
+      font-size: 30px;
+      line-height: 30px;
+    }
   }
 
   &__icon {
@@ -31,12 +49,17 @@
     font-weight: $font-semibold;
     text-transform: uppercase;
     margin-top: 20px;
+    line-height: $base-size;
   }
 
   &__allergens {
     color: lighten($color: $color-dark, $amount: 50%);
     font-size: 10px;
     margin-top: 25px;
+
+    @include md-max {
+      width: 100%;
+    }
   }
 
   &__description {
@@ -72,6 +95,10 @@
       width: 40vw;
       height: 1px;
       background-color: $color-dark;
+
+      @include sm-max {
+        width: 10vw;
+      }
     }
   }
 
@@ -82,6 +109,11 @@
     @include flex(row, flex-start, space-between);
     width: 100%;
     flex-wrap: wrap;
+
+    @include sm-max {
+      @include flex(column, center, center);
+      width: 100%;
+    }
   }
 
   &__params-title {
@@ -94,6 +126,10 @@
     @include flex(row, center, space-between);
     flex-wrap: wrap;
     padding: 1rem 0;
+
+    @include md-max {
+      @include flex(row, center, center);
+    }
   }
 
   #selects-option {
@@ -131,6 +167,18 @@
 
     transition: opacity 200ms;
     padding: calc($base-size * 2) 0;
+
+    @include md-max {
+      margin: 0 0 ($base-size * 2) 0;
+      width: 400px;
+      height: 400px;
+    }
+
+    @include sm-max {
+      width: 100%;
+      height: 300px;
+      margin: $base-size;
+    }
 
     > img {
       position: absolute;
