@@ -394,7 +394,7 @@
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
 
       console.log(
-        '#$% CHECK IF SEPARATE PRODUCTS ARE SAVED IN THE CARD',
+        '#$% CHECK! SEPARATE PRODUCTS ARE SAVED IN THE ARRAY',
         thisCart.products
       );
     }
@@ -412,6 +412,10 @@
       thisCartProduct.params = JSON.parse(JSON.stringify(menuProduct.params));
 
       thisCartProduct.getElements(element);
+      thisCartProduct.initAmountWidget();
+
+      console.log(thisCartProduct.price);
+      console.log(thisCartProduct.amount);
     }
 
     getElements(element) {
@@ -434,6 +438,25 @@
       thisCartProduct.dom.remove = thisCartProduct.dom.wrapper.querySelector(
         select.cartProduct.remove
       );
+    }
+
+    initAmountWidget() {
+      const thisCartProduct = this;
+
+      /* Init amount widget in each product in cart */
+
+      thisCartProduct.amountWidget = new AmountWidget(
+        thisCartProduct.dom.amountWidget
+      );
+
+      thisCartProduct.dom.amountWidget.addEventListener('updated', () => {
+        thisCartProduct.amount = thisCartProduct.amountWidget.value;
+
+        thisCartProduct.price =
+          thisCartProduct.priceSingle * thisCartProduct.amount;
+
+        thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
+      });
     }
   }
 
