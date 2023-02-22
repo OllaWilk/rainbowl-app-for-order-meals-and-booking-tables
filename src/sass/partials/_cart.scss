@@ -27,7 +27,7 @@
 
   &__summary {
     display: block;
-    @include flex(row, center, space-around);
+    @include flex(row, center, flex-end);
     text-transform: uppercase;
     cursor: pointer;
     width: 100%;
@@ -60,6 +60,10 @@
 
   &__total-price {
     padding-left: 16px;
+
+    strong {
+      margin-left: $base-size;
+    }
   }
 
   &__content {
@@ -128,7 +132,7 @@
   &__product-details {
     li {
       display: block;
-      margin: 0 0 ($base-size / 4) 0;
+      margin: 0 0 calc($base-size / 4) 0;
       font-size: 10px;
       color: lighten($color-dark, 40%);
       text-transform: lowercase;
@@ -140,7 +144,7 @@
 
   &__product-details-label {
     position: relative;
-    padding: 0 ($base-size / 2) 0 0;
+    padding: 0 calc($base-size / 2) 0 0;
     font-weight: 700;
 
     &::after {

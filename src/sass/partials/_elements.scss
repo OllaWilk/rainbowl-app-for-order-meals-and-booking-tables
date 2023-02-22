@@ -73,6 +73,11 @@ select:-moz-focusring {
   padding: 1rem;
   border-radius: $radius;
 
+  @include md-max {
+    min-width: auto;
+    margin: calc($base-size / 2);
+  }
+
   input {
     position: absolute;
     opacity: 0;
@@ -95,10 +100,10 @@ select:-moz-focusring {
       width: 100%;
       height: 100%;
       border: 2px solid $color-second;
+      bottom: 0;
       top: 0;
       right: 0;
       box-sizing: border-box;
-      // background-color: $color-second;
     }
   }
 

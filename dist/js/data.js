@@ -77,7 +77,7 @@ dataSource.products = {
     },
   },
   oatmeal: {
-    name: 'Feel Good Foodie Overnight Oatmeal ',
+    name: 'Feel Good Overnight Oatmeal ',
     price: 25,
     description:
       // eslint-disable-next-line quotes
@@ -160,13 +160,13 @@ dataSource.products = {
     ],
     params: {
       soups: {
-        label: 'Choose your soup',
+        label: 'soup',
         type: 'radios',
         options: {
           broccoli: {
             label:
               // eslint-disable-next-line quotes
-              "Broccoli cheddar soup is SO satisfying! It's loaded with fresh broccoli, and creamy thanks to a potato and cheddar cheese. ",
+              'Broccoli cheddar soup, loaded with fresh broccoli, and creamy thanks to a potato and cheddar cheese.',
             price: 30,
             default: true,
           },
