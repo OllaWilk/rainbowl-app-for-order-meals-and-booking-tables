@@ -34,6 +34,11 @@
     cart: {
       toggleTrigger: '.cart__summary',
       productList: '.cart__order-summary',
+      totalNumber: '.cart__total-number',
+      totalPrice:
+        '.cart__total-price strong, .cart__order-total .cart__order-price-sum',
+      subtotalPrice: '.cart__order-subtotal .cart__order-price-sum',
+      deliveryFee: '.cart__order-delivery .cart__order-price-sum ',
     },
     cartProduct: {
       amountWidget: '.widget-amount',
@@ -373,6 +378,18 @@
       thisCart.dom.productList = thisCart.dom.wrapper.querySelector(
         select.cart.productList
       );
+      thisCart.renderTotalsKeys = [
+        'totalNumber',
+        'totalPrice',
+        'subtotalPrice',
+        'deliveryFee',
+      ];
+
+      for (let key of thisCart.renderTotalsKeys) {
+        thisCart.dom[key] = thisCart.dom.wrapper.querySelectorAll(
+          select.cart[key]
+        );
+      }
     }
 
     initActions() {
@@ -422,9 +439,11 @@
         thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
       }
 
-      console.log('subtotal price', thisCart.subtotalPrice);
-      console.log('total number', thisCart.totalNumber);
-      console.log('total price', thisCart.totalPrice);
+      for (let key of thisCart.renderTotalsKeys) {
+        for (let elem of thisCart.dom[key]) {
+          elem.innerHTML = `$${thisCart[key]} `;
+        }
+      }
     }
   }
 
