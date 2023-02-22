@@ -187,8 +187,8 @@
           /* save the element in param.options with key optionId as const option */
           const option = param.options[optionsId];
 
-          /* IF: if option is selected and option is not default
-          ELSE IF: if option is not selected and option is default*/
+          /* IF: if option is selected and option is not default show img and send product to cart
+          ELSE IF: if option is not selected and option is default remove img */
 
           const optionSelected =
             formData.hasOwnProperty(paramsId) &&
@@ -207,6 +207,7 @@
           );
 
           if (optionSelected && img) {
+            /* Send  product param to cart */
             if (!thisProduct.params[paramsId]) {
               thisProduct.params[paramsId] = {
                 label: param.label,
@@ -214,9 +215,17 @@
               };
             }
             thisProduct.params[paramsId].options[optionsId] = option.label;
-
             img.classList.add(classNames.menuProduct.imageVisible);
+          } else if (optionSelected) {
+            if (!thisProduct.params[paramsId]) {
+              thisProduct.params[paramsId] = {
+                label: param.label,
+                options: {},
+              };
+            }
+            thisProduct.params[paramsId].options[optionsId] = option.label;
           } else if (img) {
+            /* Remove img if option is unselected */
             img.classList.remove(classNames.menuProduct.imageVisible);
           }
         }
