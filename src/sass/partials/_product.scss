@@ -128,7 +128,7 @@
     padding: 1rem 0;
 
     @include md-max {
-      @include flex(row, center, center);
+      @include flex(row, center, space-around);
     }
   }
 
