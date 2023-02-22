@@ -5,6 +5,7 @@ footer {
   @include md-max {
     @include flex(column, center, center);
   }
+
   p,
   a {
     color: gray;
