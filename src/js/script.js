@@ -59,6 +59,9 @@
       defaultMax: 10,
       defaultValue: 1,
     },
+    cart: {
+      deliveryFee: 15,
+    },
   };
 
   const templates = {
@@ -352,6 +355,7 @@
       const thisCart = this;
 
       thisCart.products = [];
+      thisCart.deliveryFee = settings.cart.deliveryFee;
 
       thisCart.getElements(element);
       thisCart.initActions();
@@ -393,10 +397,34 @@
 
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
 
+      thisCart.update();
+
       console.log(
         '#$% CHECK! SEPARATE PRODUCTS ARE SAVED IN THE ARRAY',
         thisCart.products
       );
+    }
+
+    update() {
+      const thisCart = this;
+
+      thisCart.totalNumber = 0;
+      thisCart.subtotalPrice = 0;
+
+      for (let product of thisCart.products) {
+        thisCart.subtotalPrice = thisCart.subtotalPrice + product.price;
+        thisCart.totalNumber = thisCart.totalNumber + product.amount;
+      }
+
+      if (!thisCart.totalNumber) {
+        thisCart.totalPrice = 0;
+      } else {
+        thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
+      }
+
+      console.log('subtotal price', thisCart.subtotalPrice);
+      console.log('total number', thisCart.totalNumber);
+      console.log('total price', thisCart.totalPrice);
     }
   }
 
@@ -413,9 +441,6 @@
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
-
-      console.log(thisCartProduct.price);
-      console.log(thisCartProduct.amount);
     }
 
     getElements(element) {
