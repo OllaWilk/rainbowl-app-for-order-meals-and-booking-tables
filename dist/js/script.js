@@ -67,6 +67,11 @@
     cart: {
       deliveryFee: 15,
     },
+    db: {
+      url: '//localhost:3131',
+      product: 'product',
+      order: 'order',
+    },
   };
 
   const templates = {
@@ -556,14 +561,36 @@
 
   const app = {
     initMenu: function () {
+      const thisApp = this;
+
       /* init new Product */
-      for (let product in this.data.products) {
-        new Product(product, this.data.products[product]);
+      for (let product in thisApp.data.products) {
+        new Product(
+          thisApp.data.products[product].id,
+          thisApp.data.products[product]
+        );
       }
     },
     getData: function () {
-      // eslint-disable-next-line no-undef
-      this.data = dataSource;
+      const thisApp = this;
+
+      thisApp.data = {};
+      const url = settings.db.url + '/' + settings.db.product;
+
+      fetch(url)
+        .then(function (rawResponse) {
+          return rawResponse.json();
+        })
+        .then(function (parsedResponse) {
+          console.log('parsedResponse', parsedResponse);
+          /* save parsedResponse as thisApp.data.products */
+
+          thisApp.data.products = parsedResponse;
+          /* execute initMenu method */
+
+          thisApp.initMenu();
+        });
+      console.log('thisApp.data', JSON.stringify(thisApp.data));
     },
     initCart: function () {
       const thisApp = this;
@@ -572,10 +599,11 @@
       thisApp.cart = new Cart(cartElem);
     },
     init: function () {
+      const thisApp = this;
+
       console.log('***START APP***');
-      this.getData();
-      this.initMenu();
-      this.initCart();
+      thisApp.getData();
+      thisApp.initCart();
     },
   };
 
