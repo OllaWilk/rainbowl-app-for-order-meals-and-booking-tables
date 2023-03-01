@@ -1,4 +1,8 @@
 .product {
+  &:first-child {
+    padding-top: ($base-size * 8);
+  }
+
   &__background-menu {
     background-color: $color-bkg-grey;
   }

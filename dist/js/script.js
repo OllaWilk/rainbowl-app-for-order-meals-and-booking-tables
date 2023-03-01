@@ -51,6 +51,9 @@
       edit: '[href="#edit"]',
       remove: '[href="#remove"]',
     },
+    page: {
+      noConnection: '.no-connection',
+    },
   };
 
   const classNames = {
@@ -431,12 +434,27 @@
       thisCart.dom.form.addEventListener('submit', function (event) {
         event.preventDefault();
 
+        /* If cart is empty show message */
+        /* If phone input or adress input is empty add class error */
+        /* else POST products to data */
+
         if (!thisCart.products.length) {
           thisCart.dom.error.innerHTML = 'Add product to cart ';
-        } else if (!thisCart.dom.address.value || !thisCart.dom.phone.value) {
-          thisCart.dom.error.innerHTML = 'Fill empty imputs ';
+        } else if (
+          !thisCart.dom.phone.value ||
+          isNaN(
+            thisCart.dom.phone.value || thisCart.dom.phone.value.lenght > 15
+          )
+        ) {
+          thisCart.dom.phone.classList.add('error');
+          thisCart.dom.error.innerHTML = 'enter phone number';
+        } else if (!thisCart.dom.address.value) {
+          thisCart.dom.address.classList.add('error');
+          thisCart.dom.error.innerHTML = 'enter delivery adress';
         } else {
           thisCart.dom.error.innerHTML = '';
+          thisCart.dom.address.classList.remove('error');
+          thisCart.dom.phone.classList.remove('error');
 
           thisCart.sendOrder();
 
@@ -506,11 +524,6 @@
 
       thisCart.update();
 
-      console.log(
-        '#$% CHECK! SEPARATE PRODUCTS ARE SAVED IN THE ARRAY',
-        thisCart.products
-      );
-
       thisCart.dom.error.innerHTML = '';
     }
 
@@ -540,6 +553,8 @@
           }
         }
       }
+
+      thisCart.updateEffect();
     }
 
     remove(cartProduct) {
@@ -552,6 +567,17 @@
       cartProduct.dom.wrapper.remove();
 
       thisCart.update();
+    }
+
+    updateEffect() {
+      const thisCart = this;
+
+      /* if price is change or amount of product is change add visual effect */
+      thisCart.dom.toggleTrigger.classList.add('update');
+
+      setTimeout(() => {
+        thisCart.dom.toggleTrigger.classList.remove('update');
+      }, 300);
     }
   }
 
@@ -671,19 +697,30 @@
       const thisApp = this;
 
       thisApp.data = {};
-      const url = settings.db.url + '/' + settings.db.product;
+      const url = `${settings.db.url}/${settings.db.product}`;
+
+      const errorPage = document.querySelector(select.page.noConnection);
+
+      console.log(errorPage);
 
       fetch(url)
-        .then(function (rawResponse) {
+        .then((rawResponse) => {
+          if (!rawResponse.ok) {
+            errorPage.classList.add('show-page');
+            throw new Error('Network response was not ok');
+          }
           return rawResponse.json();
         })
-        .then(function (parsedResponse) {
+        .then((parsedResponse) => {
           /* save parsedResponse as thisApp.data.products */
 
           thisApp.data.products = parsedResponse;
           /* execute initMenu method */
 
           thisApp.initMenu();
+        })
+        .catch((error) => {
+          console.error('Error:', error);
         });
     },
     initCart: function () {
