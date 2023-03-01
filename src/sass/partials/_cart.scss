@@ -42,16 +42,7 @@
     transition: opacity 0.5s;
 
     @include sm-max {
-      display: none;
-    }
-  }
-
-  &__summary_phone-size {
-    display: none;
-
-    @include sm-max {
-      display: block;
-      cursor: pointer;
+      padding: 0rem;
     }
   }
 
