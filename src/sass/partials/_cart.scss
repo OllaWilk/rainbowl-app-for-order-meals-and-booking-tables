@@ -3,6 +3,7 @@
   position: relative;
   z-index: 99990;
   width: 400px;
+  transition: opacity 0.5s;
 
   @include sm-max {
     max-width: 50px;
@@ -25,6 +26,11 @@
     }
   }
 
+  .update {
+    opacity: 0.7;
+    transition: none;
+  }
+
   &__summary {
     display: block;
     @include flex(row, center, flex-end);
@@ -32,6 +38,8 @@
     cursor: pointer;
     width: 100%;
     padding: 2rem;
+
+    transition: opacity 0.5s;
 
     @include sm-max {
       display: none;
