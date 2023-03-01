@@ -694,19 +694,25 @@
       const thisApp = this;
 
       thisApp.data = {};
-      const url = settings.db.url + '/' + settings.db.product;
+      const url = `${settings.db.url}/${settings.db.product}`;
 
       fetch(url)
-        .then(function (rawResponse) {
+        .then((rawResponse) => {
+          if (!rawResponse.ok) {
+            throw new Error('Network response was not ok');
+          }
           return rawResponse.json();
         })
-        .then(function (parsedResponse) {
+        .then((parsedResponse) => {
           /* save parsedResponse as thisApp.data.products */
 
           thisApp.data.products = parsedResponse;
           /* execute initMenu method */
 
           thisApp.initMenu();
+        })
+        .catch((error) => {
+          console.error('Error:', error);
         });
     },
     initCart: function () {
