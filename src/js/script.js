@@ -51,6 +51,9 @@
       edit: '[href="#edit"]',
       remove: '[href="#remove"]',
     },
+    page: {
+      noConnection: '.no-connection',
+    },
   };
 
   const classNames = {
@@ -696,9 +699,14 @@
       thisApp.data = {};
       const url = `${settings.db.url}/${settings.db.product}`;
 
+      const errorPage = document.querySelector(select.page.noConnection);
+
+      console.log(errorPage);
+
       fetch(url)
         .then((rawResponse) => {
           if (!rawResponse.ok) {
+            errorPage.classList.add('show-page');
             throw new Error('Network response was not ok');
           }
           return rawResponse.json();
