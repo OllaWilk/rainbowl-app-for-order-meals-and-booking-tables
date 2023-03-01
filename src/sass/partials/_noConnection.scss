@@ -1,0 +1,10 @@
+.no-connection {
+  display: none;
+}
+
+.show-page {
+  display: block;
+  width: 100%;
+  height: 92vh;
+  @include flex(column, center, center);
+}
