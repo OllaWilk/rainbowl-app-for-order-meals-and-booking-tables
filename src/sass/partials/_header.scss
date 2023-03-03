@@ -7,7 +7,7 @@
 
   &__wrapper {
     @include flex(row, center, space-between);
-    height: ($base-size * 8);
+    height: ($base-size * 6);
 
     @include sm-max {
       height: auto;
@@ -21,7 +21,7 @@
   @include flex(row, flex-end, center);
 
   img {
-    height: 40px;
+    height: 35px;
     margin-right: 11px;
     object-fit: cover;
 
@@ -40,7 +40,7 @@
   }
 
   &__title {
-    font-size: ($base-size * 1.4);
+    font-size: ($base-size * 1);
     font-weight: $font-light;
     text-transform: uppercase;
     letter-spacing: 2px;
