@@ -113,19 +113,23 @@
           <div class="object table" data-table="3">table-3</div>
         </div>
         <div class="booking-options"> <!-- options -->
+
+
+
+
           <label class="booking-option-title"> <!-- option-row -->
-            People
+            <h3>People</h3>
             <div class="widget-amount people-amount"> <!-- widget-amount -->
-              <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
-              <input class="amount" type="text" name="people" value="1">
-              <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
+              <a class="btn-quantity" href="#less">-</a>
+              <input class="amount-input" type="text" name="people" value="1">
+              <a class="btn-quantity" href="#more">+</a>
             </div>
           </label>
           <label class="booking-option-title"> <!-- option-row -->
             Hours
             <div class="widget-amount hours-amount"> <!-- widget-amount -->
               <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
-              <input class="amount" type="text" name="hours" value="1">
+              <input class="amount-input" type="text" name="hours" value="1">
               <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
             </div>
           </label>
@@ -163,7 +167,7 @@
         <a href="#less" class="btn-quantity btn-quantity--lt">
           <i class="fas fa-minus"></i>
         </a>
-        <input type="text" name="{{ amount }}" class="amount-inpun" value="{{ amount }}">
+        <input type="text" name="{{ amount }}" class="amount-input" value="{{ amount }}">
         <a href="#more" class="btn-quantity btn-quantity--lt">
           <i class="fas fa-plus"></i>
         </a>
@@ -288,7 +292,7 @@
               <!-- widget amount -->
               <h3 class="product__params-title">Select quantity</h3>
               <a href="#less" class="btn-quantity">-</a>
-              <input type="text" class="amount-inpun" name="amount">
+              <input type="text" class="amount-input" name="amount">
               <a href="#more" class="btn-quantity">+</a>
             </div>
             <div>

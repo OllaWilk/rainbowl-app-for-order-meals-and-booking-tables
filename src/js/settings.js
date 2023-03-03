@@ -25,7 +25,7 @@ export const select = {
   },
   widgets: {
     amount: {
-      input: 'input.amount-inpun',
+      input: 'input.amount-input',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
     },
@@ -54,6 +54,10 @@ export const select = {
   },
   nav: {
     links: '.navigation_list a',
+  },
+  booking: {
+    peopleAmount: '.people-amount',
+    hoursAmount: '.hours-amount',
   },
 };
 
