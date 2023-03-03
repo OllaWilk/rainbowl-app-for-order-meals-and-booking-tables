@@ -143,6 +143,7 @@ class Cart {
 
     /* generate html code */
     const generatedHTML = templates.cartProduct(menuProduct);
+    console.log('generatedHTML Cart', generatedHTML);
 
     /* convert generatedHTML to DOM elements */
     const generatedDOM = utils.createDOMFromHTML(generatedHTML);

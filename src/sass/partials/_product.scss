@@ -1,10 +1,11 @@
 .product {
   &:first-child {
-    padding-top: ($base-size * 8);
+    padding-top: ($base-size * 6);
   }
 
   &__background-menu {
     background-color: $color-bkg-grey;
+    padding: 2rem 0;
   }
 
   &__wrap-header {
@@ -26,19 +27,7 @@
   }
 
   &__name {
-    font-weight: $font-light;
-    font-size: 50px;
-    line-height: 60px;
-
-    @include sm-max {
-      font-size: 20px;
-      line-height: 30px;
-    }
-
-    @include md-max {
-      font-size: 30px;
-      line-height: 30px;
-    }
+    @extend .h1;
   }
 
   &__icon {
