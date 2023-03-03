@@ -29,6 +29,15 @@ export const select = {
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
     },
+    datePicker: {
+      wrapper: '.date-picker',
+      input: `input[name="date"]`,
+    },
+    hourPicker: {
+      wrapper: '.hour-picker',
+      input: 'input[type="range"]',
+      output: '.output',
+    },
   },
   cart: {
     toggleTrigger: '.cart__summary',
@@ -92,6 +101,9 @@ export const settings = {
     order: 'order',
     booking: 'booking',
     event: 'event',
+  },
+  datePicker: {
+    maxDaysInFuture: 24,
   },
 };
 
