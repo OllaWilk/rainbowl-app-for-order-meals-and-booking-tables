@@ -42,3 +42,13 @@ body {
     max-width: 1200px;
   }
 }
+
+#pages {
+  > * {
+    display: none;
+  }
+
+  > .active {
+    display: block;
+  }
+}

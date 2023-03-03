@@ -2,10 +2,13 @@ export const select = {
   handlebasTemplate: {
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product',
+    bookingWidget: '#template-booking-widget',
   },
   containerOf: {
     menu: '#product-list',
     cart: '#cart',
+    pages: '#pages',
+    booking: '.booking-wrapper',
   },
   menuProduct: {
     clickable: '.product__customize',
@@ -22,7 +25,7 @@ export const select = {
   },
   widgets: {
     amount: {
-      input: 'input.amount-inpun',
+      input: 'input.amount-input',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
     },
@@ -49,6 +52,13 @@ export const select = {
   page: {
     noConnection: '.no-connection',
   },
+  nav: {
+    links: '.navigation_list a',
+  },
+  booking: {
+    peopleAmount: '.people-amount',
+    hoursAmount: '.hours-amount',
+  },
 };
 
 export const classNames = {
@@ -58,6 +68,12 @@ export const classNames = {
   },
   cart: {
     wrapperActive: 'active',
+  },
+  pages: {
+    active: 'active',
+  },
+  nav: {
+    active: 'active',
   },
 };
 
@@ -74,6 +90,8 @@ export const settings = {
     url: '//localhost:3131',
     product: 'product',
     order: 'order',
+    booking: 'booking',
+    event: 'event',
   },
 };
 
@@ -83,5 +101,8 @@ export const templates = {
   ),
   cartProduct: Handlebars.compile(
     document.querySelector(select.handlebasTemplate.cartProduct).innerHTML
+  ),
+  bookingWidget: Handlebars.compile(
+    document.querySelector(select.handlebasTemplate.bookingWidget).innerHTML
   ),
 };
