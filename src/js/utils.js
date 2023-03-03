@@ -65,6 +65,12 @@ utils.addDays = function (dateStr, days) {
   return dateObj;
 };
 
+utils.numberToHour = function (number) {
+  return (
+    (Math.floor(number) % 24) + ':' + ((number % 1) * 60 + '').padStart(2, '0')
+  );
+};
+
 Handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
   return arg1 == arg2 ? options.fn(this) : options.inverse(this);
 });

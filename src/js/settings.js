@@ -22,6 +22,7 @@ export const select = {
     menuProductsActive: '#product-list > .product.active',
     formInputs: 'input, select',
     errorinfo: '.alert-info',
+    menuProducts: '#product-list > .product',
   },
   widgets: {
     amount: {
@@ -67,6 +68,7 @@ export const select = {
   booking: {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
+    hourAmountInput: '[name="hours"]',
   },
 };
 
@@ -104,6 +106,10 @@ export const settings = {
   },
   datePicker: {
     maxDaysInFuture: 24,
+  },
+  hours: {
+    open: 12,
+    close: 24,
   },
 };
 
