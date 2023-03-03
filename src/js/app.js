@@ -1,9 +1,10 @@
 import { settings, select, classNames } from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
+import Booking from './components/Booking.js';
 
 const app = {
-  initPages: function () {
+  initPages() {
     const thisApp = this;
 
     thisApp.pages = document.querySelector(select.containerOf.pages).children; // find all children of pages container
@@ -104,11 +105,22 @@ const app = {
       app.cart.add(e.detail.product);
     });
   },
+  initBooking() {
+    const thisApp = this;
+
+    const bookingReservation = document.querySelector(
+      select.containerOf.booking
+    );
+
+    thisApp.booking = new Booking(bookingReservation);
+  },
+
   init() {
     const thisApp = this;
     thisApp.initPages();
     thisApp.getData();
     thisApp.initCart();
+    thisApp.initBooking();
   },
 };
 
