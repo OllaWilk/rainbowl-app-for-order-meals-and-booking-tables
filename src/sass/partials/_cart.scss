@@ -1,7 +1,7 @@
 .cart {
   position: relative;
   z-index: 99990;
-  width: 400px;
+  width: 300px;
   transition: opacity 0.5s;
 
   @include sm-max {
