@@ -69,6 +69,7 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     hourAmountInput: '[name="hours"]',
+    tables: '.floor-plan .table',
   },
 };
 
@@ -85,6 +86,11 @@ export const classNames = {
   },
   nav: {
     active: 'active',
+  },
+  booking: {
+    loading: 'loading',
+    tableBooked: 'booked',
+    selectedTable: 'pick-table',
   },
 };
 
@@ -114,6 +120,9 @@ export const settings = {
   hours: {
     open: 12,
     close: 24,
+  },
+  booking: {
+    tableIdAttribute: 'data-table',
   },
 };
 

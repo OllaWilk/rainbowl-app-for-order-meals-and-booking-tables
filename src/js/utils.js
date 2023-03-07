@@ -59,6 +59,12 @@ utils.dateToStr = function (dateObj) {
   return dateObj.toISOString().slice(0, 10);
 };
 
+utils.hourToNumber = function (hour) {
+  const parts = hour.split(':');
+
+  return parseInt(parts[0]) + parseInt(parts[1]) / 60;
+};
+
 utils.addDays = function (dateStr, days) {
   const dateObj = new Date(dateStr);
   dateObj.setDate(dateObj.getDate() + days);
