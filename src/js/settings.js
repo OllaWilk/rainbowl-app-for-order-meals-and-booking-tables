@@ -103,6 +103,10 @@ export const settings = {
     order: 'order',
     booking: 'booking',
     event: 'event',
+    dataStartParamKey: 'date_gte',
+    dataEndParamKey: 'date_lte',
+    notRepeatParam: 'repeat=false',
+    repeatParam: 'repeat_ne=false',
   },
   datePicker: {
     maxDaysInFuture: 24,
