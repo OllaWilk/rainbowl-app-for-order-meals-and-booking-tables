@@ -72,6 +72,8 @@ export const select = {
     hourAmountInput: '[name="hours"]',
     tables: '.floor-plan .table',
     orderInputs: '.time-picker input ',
+    form: '.order-confirmation button',
+    bookedInfo: '.bookedInfo',
   },
 };
 

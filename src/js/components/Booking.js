@@ -8,6 +8,8 @@ class Booking {
   constructor(bookingReservation) {
     const thisBooking = this;
 
+    thisBooking.bookingTables = [];
+
     thisBooking.render(bookingReservation);
     thisBooking.initWidgets();
     thisBooking.getData();
@@ -44,7 +46,14 @@ class Booking {
     thisBooking.dom.orderInputs = thisBooking.dom.wrapper.querySelectorAll(
       select.booking.orderInputs
     );
-    console.log(thisBooking.dom.orderInputs);
+
+    thisBooking.dom.form = thisBooking.dom.wrapper.querySelector(
+      select.booking.form
+    );
+
+    thisBooking.dom.bookedInfo = thisBooking.dom.wrapper.querySelector(
+      select.booking.bookedInfo
+    );
   }
 
   getData() {
@@ -220,7 +229,6 @@ class Booking {
         const isBooked = table.classList.contains(
           classNames.booking.tableBooked
         );
-        console.log(thisBooking.date);
         /* If table is booked show a message */
         if (isBooked) {
           thisBooking.dom.alert.innerHTML = `This table is occupied.Please choose another.`;
@@ -230,7 +238,10 @@ class Booking {
           thisBooking.tableId = table.getAttribute(
             settings.booking.tableIdAttribute
           );
+          /* add selected table to bookingTables */
+          thisBooking.bookingTables.push(thisBooking.tableId);
         }
+        thisBooking.dom.bookedInfo.innerHTML = '';
       });
 
       /* Unselect tables if inputs change */
@@ -238,16 +249,38 @@ class Booking {
       [...thisBooking.dom.orderInputs].forEach((input) => {
         input.addEventListener('change', () => {
           table.classList.remove(classNames.booking.selectedTable);
+          thisBooking.bookingTables.splice(0);
         });
       });
     });
+
+    thisBooking.dom.form.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      /* Send Reserwation */
+      thisBooking.sendReserwation();
+      /* Unselect tabless */
+      [...thisBooking.dom.tables].forEach((table) => {
+        table.classList.remove(classNames.booking.selectedTable);
+      });
+      thisBooking.dom.bookedInfo.innerHTML = `Reserwation sent. Thank You`;
+      thisBooking.bookingTables = [];
+    });
   }
 
-  // sendReserwation() {
-  //   const thisBooking = this;
+  sendReserwation() {
+    const thisBooking = this;
 
-  //   const reservation = {};
-  // }
+    const url = settings.db.url + '/' + settings.db.booking;
+
+    const booking = {
+      date: thisBooking.datePicker.value,
+      hour: thisBooking.hourPicker.value,
+      table: thisBooking.bookingTables,
+    };
+
+    console.log('reserwation', booking);
+  }
 }
 
 export default Booking;
