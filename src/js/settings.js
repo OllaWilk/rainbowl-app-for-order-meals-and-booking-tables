@@ -52,6 +52,7 @@ export const select = {
     formSubmit: '.cart__order [type="submit"]',
     phone: '[name="phone"]',
     address: '[name="address"]',
+    confirmation: '.cart__order-confirmation input',
   },
   cartProduct: {
     amountWidget: '.widget-amount',
@@ -70,6 +71,7 @@ export const select = {
     hoursAmount: '.hours-amount',
     hourAmountInput: '[name="hours"]',
     tables: '.floor-plan .table',
+    orderInputs: '.time-picker input ',
   },
 };
 
