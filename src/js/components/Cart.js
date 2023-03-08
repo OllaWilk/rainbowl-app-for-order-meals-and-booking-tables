@@ -112,8 +112,6 @@ class Cart {
 
     const url = settings.db.url + '/' + settings.db.order;
 
-    console.log(url);
-
     const payload = {
       phone: thisCart.dom.phone.value,
       address: thisCart.dom.address.value,
