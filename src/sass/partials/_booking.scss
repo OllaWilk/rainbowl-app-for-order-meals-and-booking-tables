@@ -177,6 +177,10 @@
         opacity: 0.4;
       }
     }
+
+    &.pick-table {
+      color: $color-success;
+    }
   }
 
   [data-table='1'] {
