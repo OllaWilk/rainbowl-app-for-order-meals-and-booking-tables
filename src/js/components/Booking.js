@@ -16,6 +16,7 @@ class Booking {
     thisBooking.getData();
     thisBooking.initActions();
     thisBooking.pickStarters();
+    console.log(thisBooking.booking);
   }
 
   render(bookingElem) {
@@ -59,6 +60,13 @@ class Booking {
 
     thisBooking.dom.starters = thisBooking.dom.wrapper.querySelector(
       select.booking.starters
+    );
+
+    thisBooking.dom.phone = thisBooking.dom.wrapper.querySelector(
+      select.booking.phone
+    );
+    thisBooking.dom.address = thisBooking.dom.wrapper.querySelector(
+      select.booking.address
     );
   }
 
@@ -238,11 +246,14 @@ class Booking {
     } else {
       thisBooking.dom.alert.innerHTML = '';
       pickedTable.classList.toggle(classNames.booking.selectedTable);
-      thisBooking.tableId = pickedTable.getAttribute(
-        settings.booking.tableIdAttribute
-      );
-      /* add selected table to bookingTables */
-      thisBooking.bookingTables.push(thisBooking.tableId);
+
+      if (pickedTable.classList.contains(classNames.booking.selectedTable)) {
+        thisBooking.tableId = pickedTable.getAttribute(
+          settings.booking.tableIdAttribute
+        );
+        /* add selected table to bookingTables */
+        thisBooking.bookingTables.push(thisBooking.tableId);
+      }
     }
     /* after submit clear booked info */
     thisBooking.dom.bookedInfo.innerHTML = '';
@@ -276,6 +287,7 @@ class Booking {
     [...thisBooking.dom.tables].forEach((table) => {
       table.addEventListener('click', () => {
         const pickedTable = table;
+
         thisBooking.pickTables(pickedTable);
       });
 
@@ -292,18 +304,34 @@ class Booking {
     thisBooking.dom.form.addEventListener('click', (e) => {
       e.preventDefault();
 
-      thisBooking.sendReserwation();
+      /* check all booking values. if phone, table, address values are empty don't sent data*/
+      if (thisBooking.bookingTables.length === 0) {
+        thisBooking.dom.alert.innerHTML = 'Pleas select table';
+      } else if (
+        !thisBooking.dom.phone.value &&
+        isNaN(thisBooking.dom.phone.value)
+      ) {
+        thisBooking.dom.alert.innerHTML = 'Pleas add phone';
+      } else if (!thisBooking.dom.address.value) {
+        thisBooking.dom.alert.innerHTML = 'Pleas add address';
+      } else {
+        thisBooking.dom.alert.innerHTML = '';
 
-      /* Unselect tabless */
-      [...thisBooking.dom.tables].forEach((table) => {
-        table.classList.remove(classNames.booking.selectedTable);
-      });
+        thisBooking.sendReserwation();
 
-      /* send info about submition */
-      thisBooking.dom.bookedInfo.innerHTML = `Reserwation sent. Thank You`;
+        /* Unselect tabless */
+        [...thisBooking.dom.tables].forEach((table) => {
+          table.classList.remove(classNames.booking.selectedTable);
+        });
 
-      /* clear bookingTables */
-      thisBooking.bookingTables = [];
+        /* clear  */
+        thisBooking.bookingTables = [];
+        thisBooking.dom.address.value = '';
+        thisBooking.dom.phone.value = '';
+
+        /* send info about submition */
+        thisBooking.dom.bookedInfo.innerHTML = `Reserwation sent. Thank You`;
+      }
     });
   }
 
@@ -319,6 +347,8 @@ class Booking {
       duration: thisBooking.hoursAmountWidget.value,
       ppl: thisBooking.peopleAmountWidget.value,
       starters: thisBooking.starters,
+      phone: thisBooking.dom.phone.value,
+      address: thisBooking.dom.address.value,
     };
 
     console.log('reserwation', booking);

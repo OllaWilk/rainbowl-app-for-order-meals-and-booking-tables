@@ -75,6 +75,8 @@ export const select = {
     form: '.order-confirmation button',
     bookedInfo: '.bookedInfo',
     starters: '.booking-starters',
+    phone: '[name="phone"]',
+    address: '.order-confirmation > input[name="address"]',
   },
 };
 
