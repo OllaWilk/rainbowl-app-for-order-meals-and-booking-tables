@@ -74,6 +74,7 @@ export const select = {
     orderInputs: '.time-picker input ',
     form: '.order-confirmation button',
     bookedInfo: '.bookedInfo',
+    starters: '.booking-starters',
   },
 };
 
