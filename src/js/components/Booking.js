@@ -9,6 +9,7 @@ class Booking {
     const thisBooking = this;
 
     thisBooking.bookingTables = [];
+    thisBooking.starters = [];
 
     thisBooking.render(bookingReservation);
     thisBooking.initWidgets();
@@ -220,32 +221,39 @@ class Booking {
     });
   }
 
+  pickTables(pickedTable) {
+    const thisBooking = this;
+
+    const isBooked = pickedTable.classList.contains(
+      classNames.booking.tableBooked
+    );
+    /* If table is booked show a message else select table and send selected table to bookngTAbles*/
+    if (isBooked) {
+      thisBooking.dom.alert.innerHTML = `This table is occupied. Please choose another.`;
+    } else {
+      thisBooking.dom.alert.innerHTML = '';
+      pickedTable.classList.toggle(classNames.booking.selectedTable);
+      thisBooking.tableId = pickedTable.getAttribute(
+        settings.booking.tableIdAttribute
+      );
+      /* add selected table to bookingTables */
+      thisBooking.bookingTables.push(thisBooking.tableId);
+    }
+    /* after submit clear booked info */
+    thisBooking.dom.bookedInfo.innerHTML = '';
+  }
+
   initActions() {
     const thisBooking = this;
 
     /* Add listener for table */
     [...thisBooking.dom.tables].forEach((table) => {
       table.addEventListener('click', () => {
-        const isBooked = table.classList.contains(
-          classNames.booking.tableBooked
-        );
-        /* If table is booked show a message */
-        if (isBooked) {
-          thisBooking.dom.alert.innerHTML = `This table is occupied.Please choose another.`;
-        } else {
-          thisBooking.dom.alert.innerHTML = '';
-          table.classList.toggle(classNames.booking.selectedTable);
-          thisBooking.tableId = table.getAttribute(
-            settings.booking.tableIdAttribute
-          );
-          /* add selected table to bookingTables */
-          thisBooking.bookingTables.push(thisBooking.tableId);
-        }
-        thisBooking.dom.bookedInfo.innerHTML = '';
+        const pickedTable = table;
+        thisBooking.pickTables(pickedTable);
       });
 
       /* Unselect tables if inputs change */
-
       [...thisBooking.dom.orderInputs].forEach((input) => {
         input.addEventListener('change', () => {
           table.classList.remove(classNames.booking.selectedTable);
@@ -254,16 +262,20 @@ class Booking {
       });
     });
 
+    /*  */
+
+    /* Send Reserwation */
     thisBooking.dom.form.addEventListener('click', (e) => {
       e.preventDefault();
 
-      /* Send Reserwation */
       thisBooking.sendReserwation();
       /* Unselect tabless */
       [...thisBooking.dom.tables].forEach((table) => {
         table.classList.remove(classNames.booking.selectedTable);
       });
+      /* send info about submition */
       thisBooking.dom.bookedInfo.innerHTML = `Reserwation sent. Thank You`;
+      /* clear bookingTables */
       thisBooking.bookingTables = [];
     });
   }
@@ -277,6 +289,9 @@ class Booking {
       date: thisBooking.datePicker.value,
       hour: thisBooking.hourPicker.value,
       table: thisBooking.bookingTables,
+      duration: thisBooking.hoursAmountWidget.value,
+      ppl: thisBooking.peopleAmountWidget.value,
+      starters: thisBooking.starters,
     };
 
     console.log('reserwation', booking);
