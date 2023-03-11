@@ -197,6 +197,7 @@ class Booking {
 
   makeBooked(date, hour, duration, table) {
     const thisBooking = this;
+
     /* check if date of event already exists in object booked
     if not create object with key with date  */
     if (typeof thisBooking.booked[date] == 'undefined') {
@@ -373,6 +374,18 @@ class Booking {
         );
         // thisBooking.updateDOM();
       });
+
+    this.updateAfterBooking(
+      booking.date,
+      booking.hour,
+      booking.duration,
+      booking.table
+    );
+  }
+  updateAfterBooking(date, hour, duration, table) {
+    /* mark new booked table as booked on restaurant map */
+    this.makeBooked(date, hour, duration, table);
+    this.updateDom();
   }
 }
 
