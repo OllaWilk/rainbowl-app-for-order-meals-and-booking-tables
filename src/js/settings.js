@@ -3,6 +3,7 @@ export const select = {
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product',
     bookingWidget: '#template-booking-widget',
+    homepage: '#template-home-widget',
   },
   containerOf: {
     menu: '#product-list',
@@ -74,7 +75,7 @@ export const select = {
     orderInputs: '.time-picker input ',
     form: '.order-confirmation button',
     bookedInfo: '.bookedInfo',
-    starters: '.booking-starters',
+    starters: '[name="starter"]',
     phone: '[name="phone"]',
     address: '.order-confirmation > input[name="address"]',
   },
