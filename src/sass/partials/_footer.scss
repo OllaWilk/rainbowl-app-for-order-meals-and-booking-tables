@@ -1,15 +1,18 @@
 footer {
   background-color: $color-dark;
-  @include flex(row, center, space-between);
 
-  @include md-max {
-    @include flex(column, center, center);
+  div {
+    @include flex(row, center, space-between);
+
+    @include md-max {
+      @include flex(column, center, center);
+    }
   }
 
   p,
   a {
     color: gray;
-    padding: $base-size 3rem;
+    padding: $base-size 0rem;
   }
 
   .icon {

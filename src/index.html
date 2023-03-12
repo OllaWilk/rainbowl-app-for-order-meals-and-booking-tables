@@ -32,7 +32,7 @@
             <li> <a href="#home">Home</a></li>
             <li><a href="#order">Order</a></li>
             <li><a href="#booking">Booking</a></li>
-            <li><a href="#info">Info</a></li>
+            <!-- <li><a href="#info">Info</a></li> -->
           </ul>
         </nav>
         <div class="cart " id="cart">
@@ -41,7 +41,6 @@
               <span class="cart__total-number">0</span>
               <i class="fas fa-shopping-cart cart__icon"></i>
             </div>
-
             <span class="cart__total-price">Total price: <strong> $0</strong></span>
           </div>
           <div class="cart__content">
@@ -78,10 +77,152 @@
 
   <div id="pages">
     <section id="home">
-      <div class="home__header">
+      <!-- splash -->
+      <div class="home__splash">
+        <div class="splash-text-wrap">
+          <h1>
+            100% Natural.</br>
+            Home Made </br>
+            Fresh and Healthy.
+          </h1>
+        </div>
+        <img src="./images/home/splash.png" alt="strawberry-bowl">
+      </div>
+      <!-- end splash -->
+      <div class="container">
+        <ul class="home-info navigation_list"> <!-- order online -->
+          <li class="info-cart">
+            <img class="img-info" src="./images/home/order.png" alt="delivery">
+            <a class="info__link" href="#order">Order online</a>
+            <p class="info__description">Get it fresh</p>
+          </li>
 
+          <li class="info-cart"> <!-- delivery info -->
+            <img class="img-info" src="./images/home/delivery.png" alt="delivery">
+            <a class="info__link" href="#order">Free delivery</a>
+            <p class="info__description">Delivery to your door step</p>
+          </li>
+          <li class="info-cart"> <!-- book a table -->
+            <img class="img-info" src="./images/home/pressent.png" alt="delivery">
+            <a class="info__link" href="#booking">Visit us</a>
+            <p class="info_description">Book a table</p>
+          </li>
+        </ul>
+        <!-- OPENING INFO -->
+        <div class="open-info">
+          <h3 class="open-info__title">Opening hours:</h3>
+          <p class="open-info__text">TUE-SUN, 12PM - 12 AM</p>
+        </div>
+
+        <div class="testimonials">
+          <!-- SWIPER SLIDER -->
+          <div>
+            <!-- SLIDE -->
+            <div class="testimonial">
+              <div class="img-wrap">
+                <img src="./images/home/pumpkin.jpg" alt="pumpkin soup">
+              </div>
+              <div class="testimonial-wrap">
+                <h3 class="testimonial-title">Great food and great soups!</h3>
+                <p class="testimonial__quote">
+                  Best Pumpkin Soup in town! Awesome soups with great tasting and fresh ingredients.
+                  I had the creamy pumpkin soup which really tasted like home made soup.
+                </p>
+                <p class="testimonial-author">- Margaret Osbourne</p>
+              </div>
+            </div>
+            <!-- SLIDE -->
+            <div class="testimonial">
+              <div class="img-wrap">
+                <img src="./images/home/chia-orange.jpg" alt="kiwi chia bowl">
+              </div>
+              <div class="testimonial-wrap">
+                <h3 class="testimonial-title">WOW! Amazing !</h3>
+                <p class="testimonial__quote">
+                  There's a reason why this place is always packed, the chiabowl is so good that
+                  you'll believe you've somehow been transported to Bali for breakfast!
+                </p>
+                <p class="testimonial-author">- Margaret Osbourne</p>
+              </div>
+            </div>
+            <!-- SLIDE -->
+            <div class="testimonial">
+              <div class="img-wrap">
+                <img src="./images/home/chia-kiwi.jpg" alt="kiwi chia bowl">
+              </div>
+              <div class="testimonial-wrap">
+                <h3 class="testimonial-title">Wonderful Oatmeal!</h3>
+                <p class="testimonial__quote">
+                  I've had great oatmeal all over the world and this restaurant is right up there
+                  in quality, taste and service.
+                </p>
+                <p class="testimonial-author">- Margaret Osbourne</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination">
+            <p class="bullet"></p>
+            <p class="bullet"></p>
+            <p class="bullet bullet-active "></p>
+          </div> <!-- DOTS FOR SLIDER -->
+          <!-- END OF SWIPER -->
+        </div>
+
+        <!-- START GALLERY SECTION -->
+        <div class="main-gallery">
+          <!-- Tile -->
+          <div class="gallery-tile">
+            <img src="images/home/gal-6.jpg" alt="strawberry-bowl">
+            <div class="gallery-content">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="#"><i class="fas fa-share-alt"></i></a>
+            </div>
+          </div>
+          <!-- Tile -->
+          <div class="gallery-tile">
+            <img src="images/home/gal-1.jpg" alt="strawberry-bowl">
+            <div class="gallery-content">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="#"><i class="fas fa-share-alt"></i></a>
+            </div>
+          </div>
+          <!-- Tile -->
+          <div class="gallery-tile">
+            <img src="images/home/gal-2.jpg" alt="strawberry-bowl">
+            <div class="gallery-content">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="#"><i class="fas fa-share-alt"></i></a>
+            </div>
+          </div>
+          <!-- Tile -->
+          <div class="gallery-tile">
+            <img src="images/home/gal-3.jpg" alt="strawberry-bowl">
+            <div class="gallery-content">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="#"><i class="fas fa-share-alt"></i></a>
+            </div>
+          </div>
+          <!-- Tile -->
+          <div class="gallery-tile">
+            <img src="images/home/gal-4.jpg" alt="strawberry-bowl">
+            <div class="gallery-content">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="#"><i class="fas fa-share-alt"></i></a>
+            </div>
+          </div>
+          <!-- Tile -->
+          <div class="gallery-tile">
+            <img src="images/home/gal-5.jpg" alt="strawberry-bowl">
+            <div class="gallery-content">
+              <a href="#"><i class="fas fa-heart"></i></a>
+              <a href="#"><i class="fas fa-share-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        <a class="gallery__social" href="#">View more on Instagram</a>
       </div>
     </section>
+
     <section id="order">
       <div id="product-list" class="product-list "></div>
     </section>
@@ -98,11 +239,14 @@
   </div>
 
   <footer>
-    <p>Hi, my name is Alex Wilk and this is my portfolio application made in Vanilla Js, Express.js, HTML and
-      Sass.</p>
-    <a href="https://github.com/OllaWilk/6_rainbowl_shop"> Please, check out my github
-      <i class="icon fa-brands fa-github"></i>
-    </a>
+    <div class="container">
+
+      <p>Hi, my name is Alex Wilk and this is my portfolio application made in Vanilla Js, Express.js, HTML and
+        Sass.</p>
+      <a href="https://github.com/OllaWilk/6_rainbowl_shop"> Please, check out my github
+        <i class="icon fa-brands fa-github"></i>
+      </a>
+    </div>
   </footer>
 
   <!-- BOOKING PAGE -->
@@ -168,7 +312,7 @@
           </div>
           <div class="order-confirmation">
             <input type="tel" name="phone" placeholder="Your phone">
-            <input type="text" name="address" placeholder="Your address">
+            <input type="mail" name="address" placeholder="Your e-mail" >
             <button type="submit" class="btn-secondary">Book table</button>
             <p class="bookedInfo"></p>
           </div>
