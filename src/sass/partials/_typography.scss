@@ -25,3 +25,15 @@
   font-weight: $font-bold;
   text-transform: uppercase;
 }
+
+.h1-splash {
+  color: $color-second;
+  font-size: 60px;
+}
+
+.h2-home {
+  font-size: calc($base-size * 2);
+  text-transform: uppercase;
+  font-weight: $font-light;
+  color: $color-dark;
+}
