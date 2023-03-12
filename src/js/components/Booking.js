@@ -293,14 +293,11 @@ class Booking {
 
       /* check all booking values. if phone, table, address values are empty don't sent data*/
       if (thisBooking.bookingTables.length === 0) {
-        thisBooking.dom.alert.innerHTML = 'Pleas select table';
-      } else if (
-        !thisBooking.dom.phone.value &&
-        isNaN(thisBooking.dom.phone.value)
-      ) {
-        thisBooking.dom.alert.innerHTML = 'Pleas add phone';
+        thisBooking.dom.alert.innerHTML = 'Please select table';
+      } else if (!thisBooking.dom.phone.value) {
+        thisBooking.dom.alert.innerHTML = 'Please add phone';
       } else if (!thisBooking.dom.address.value) {
-        thisBooking.dom.alert.innerHTML = 'Pleas add address';
+        thisBooking.dom.alert.innerHTML = 'Please add email';
       } else {
         thisBooking.dom.alert.innerHTML = '';
 
