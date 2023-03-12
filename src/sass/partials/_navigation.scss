@@ -5,7 +5,9 @@
     @include flex(row, center, space-between);
 
     @include l-max {
-      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     li {
@@ -16,16 +18,16 @@
       a {
         color: $color-dark;
         height: 100%;
-              
-        margin: 0 ($base-size * 2 );
+
+        margin: 0 ($base-size * 2);
         text-transform: uppercase;
         letter-spacing: 1px;
 
-        &:hover {  
+        &:hover {
           border-bottom: 2px solid $color-dark;
           font-weight: $font-semibold;
         }
-      }             
+      }
     }
   }
 }

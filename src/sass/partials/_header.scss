@@ -8,6 +8,7 @@
   &__wrapper {
     @include flex(row, center, space-between);
     height: ($base-size * 6);
+    background-color: $color-light;
 
     @include sm-max {
       height: auto;

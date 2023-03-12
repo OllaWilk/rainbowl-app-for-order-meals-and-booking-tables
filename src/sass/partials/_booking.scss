@@ -25,7 +25,7 @@
 .page__title {
   @extend .h1;
   margin: ($base-size * 3) 0;
-  text-align: flex-start;
+  text-align: center;
 }
 
 .time-picker {
