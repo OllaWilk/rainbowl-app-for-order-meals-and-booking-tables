@@ -90,7 +90,8 @@
       </div>
       <!-- end splash -->
       <div class="container">
-        <ul class="home-info navigation_list"> <!-- order online -->
+        <!-- order online -->
+        <ul class="home-info navigation_list">
           <li class="info-cart">
             <img class="img-info" src="./images/home/order.png" alt="delivery">
             <a class="info__link" href="#order">Order online</a>
@@ -113,10 +114,9 @@
           <h3 class="open-info__title">Opening hours:</h3>
           <p class="open-info__text">TUE-SUN, 12PM - 12 AM</p>
         </div>
-
         <div class="testimonials">
           <!-- SWIPER SLIDER -->
-          <div>
+          <div class="tiles">
             <!-- SLIDE -->
             <div class="testimonial">
               <div class="img-wrap">
@@ -160,10 +160,10 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination">
-            <p class="bullet"></p>
-            <p class="bullet"></p>
-            <p class="bullet bullet-active "></p>
+          <div class="dots">
+            <p class="dot"></p>
+            <p class="dot"></p>
+            <p class="dot active "></p>
           </div> <!-- DOTS FOR SLIDER -->
           <!-- END OF SWIPER -->
         </div>
@@ -227,7 +227,7 @@
       <div id="product-list" class="product-list "></div>
     </section>
     <section id="booking">
-      <div class="booking-wrapper "></div>
+      <div class="booking-wrapper" id="booking-wrapper"></div>
     </section>
     <section id="info">
       <div class="info-wrapper container"></div>
@@ -248,6 +248,7 @@
       </a>
     </div>
   </footer>
+
 
   <!-- BOOKING PAGE -->
   <script id="template-booking-widget" type="text/x-handlebars-template">
@@ -473,7 +474,6 @@
   <script src="./vendor/range-slider.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="./js/app.js" type="module"></script>
-
 </body>
 
 </html>

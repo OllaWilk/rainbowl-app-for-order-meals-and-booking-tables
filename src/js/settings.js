@@ -9,7 +9,8 @@ export const select = {
     menu: '#product-list',
     cart: '#cart',
     pages: '#pages',
-    booking: '.booking-wrapper',
+    booking: '#booking-wrapper',
+    home: '#home',
   },
   menuProduct: {
     clickable: '.product__customize',
@@ -78,6 +79,9 @@ export const select = {
     starters: '[name="starter"]',
     phone: '[name="phone"]',
     address: '.order-confirmation > input[name="address"]',
+  },
+  home: {
+    tiles: '#tiles',
   },
 };
 
