@@ -1,0 +1,393 @@
+{
+  "product": [
+    {
+      "id": "chiaPudding",
+      "name": "RainBowl Chia Pudding",
+      "price": 30,
+      "description": "This Rainbowl Chia Pudding not only satisfies a sweet tooth, but it is full of healthy antioxidant-rich foods. Chia is an increasingly popular food ingredient among consumers and manufacturers. The nutrient-rich seeds are good sources of α-linolenic acid (an omega-3 fatty acid), fiber, protein, vitamins, minerals, and antioxidants, prompting claims that chia is “superfood.",
+      "images": [
+        "<img class=\"active\" src=\"images/flavour/bowl.svg\" alt=\"bowl\">",
+        "<img class=\"flavour-milky\" src=\"images/flavour/milky.svg\" alt=\"milky\">",
+        "<img class=\"flavour-acai\" src=\"images/flavour/acai.svg\" alt=\"acai\">",
+        "<img class=\"flavour-cocoa\" src=\"images/flavour/cocoa.svg\" alt=\"cocoa\">",
+        "<img class=\"flavour-mint \" src=\"images/flavour/mint.svg\" alt=\"mint\">",
+        "<img class=\"ingredients-vanilla \" src=\"images/ingredients/vanilla.svg\" alt=\"vanilla\">",
+        "<img class=\"ingredients-orange \" src=\"images/ingredients/orange.svg\" alt=\"orange\">",
+        "<img class=\"ingredients-banana \" src=\"images/ingredients/banana.svg\" alt=\"banana\">",
+        "<img class=\"ingredients-kivi \" src=\"images/ingredients/kivi.svg\" alt=\"kivi\">",
+        "<img class=\"ingredients-blueberry \" src=\"images/ingredients/blueberry.svg\" alt=\"blueberry\">",
+        "<img class=\"ingredients-stravberry \" src=\"images/ingredients/strawberry.svg\" alt=\"strawberry\">",
+        "<img class=\"ingredients-almound \" src=\"images/ingredients/almound.svg\" alt=\"almound\">",
+        "<img class=\"ingredients-cinnamon \" src=\"images/ingredients/cinnamon.svg\" alt=\"cinnamon\">"
+      ],
+      "params": {
+        "ingredients": {
+          "label": "Ingredients",
+          "type": "checkboxes",
+          "options": {
+            "vanilla": {
+              "label": "Vanilla",
+              "price": 3
+            },
+            "orange": {
+              "label": "Orange",
+              "price": 4,
+              "default": true
+            },
+            "banana": {
+              "label": "Banana",
+              "price": 5,
+              "default": true
+            },
+            "kivi": {
+              "label": "Kivi",
+              "price": 3,
+              "default": true
+            },
+            "blueberry": {
+              "label": "Blueberry",
+              "price": 4
+            },
+            "stravberry": {
+              "label": "Strawberry",
+              "price": 3,
+              "default": true
+            },
+            "almound": {
+              "label": "Almound",
+              "price": 3
+            },
+            "cinnamon": {
+              "label": "Cinnamon & Spice",
+              "price": 2
+            }
+          }
+        },
+        "dairy": {
+          "label": "Dairy",
+          "type": "radios",
+          "options": {
+            "milk": {
+              "label": "Milk",
+              "price": 0,
+              "default": true
+            },
+            "coconut": {
+              "label": "Coconut milk",
+              "price": 3
+            },
+            "almound": {
+              "label": "Almound milk",
+              "price": 3
+            }
+          }
+        },
+        "flavour": {
+          "label": "Flavour",
+          "type": "radios",
+          "options": {
+            "milky": {
+              "label": "Milky",
+              "price": 0
+            },
+            "mint": {
+              "label": "Mint",
+              "price": 5
+            },
+            "cocoa": {
+              "label": "Cocoa",
+              "price": 4
+            },
+            "acai": {
+              "label": "Acai Powder",
+              "price": 5,
+              "default": true
+            }
+          }
+        },
+        "sugar": {
+          "label": "Sugar",
+          "type": "radios",
+          "options": {
+            "maple": {
+              "label": "Maple syroup",
+              "price": 3,
+              "default": true
+            },
+            "honey": {
+              "label": "Honey",
+              "price": 5
+            },
+            "sugar": {
+              "label": "Sugar",
+              "price": 4
+            },
+            "sugarfree": {
+              "label": "Sugarr free",
+              "price": 0
+            }
+          }
+        },
+        "size": {
+          "label": "size",
+          "type": "select",
+          "options": {
+            "standard": {
+              "label": "standard 200 ml",
+              "price": 0,
+              "default": true
+            },
+            "medium": {
+              "label": "medium 400 ml",
+              "price": 1
+            },
+            "large": {
+              "label": "large 600 ml",
+              "price": 2
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": "soup",
+      "class": "small",
+      "name": "Soup season is back",
+      "price": 30,
+      "description": "When there's just too much on your mind, that's when the warm, uncomplicated goodness of soup hits the spot.",
+      "images": [
+        "<img class=\"soups-broccoli active\" src=\"images/soups/broccoli.svg\">",
+        "<img class=\"soups-chili \" src=\"images/soups/chilisoup.svg\">",
+        "<img class=\"soups-pumpkin \" src=\"images/soups/pumpkin.svg\">"
+      ],
+      "params": {
+        "soups": {
+          "label": "soup",
+          "type": "radios",
+          "options": {
+            "broccoli": {
+              "label": "Broccoli cheddar soup, loaded with fresh broccoli, and creamy thanks to a potato and cheddar cheese.",
+              "price": 30,
+              "default": true
+            },
+            "chili": {
+              "label": "Chili Soup with ground meat and chili powder, plus beans and tomato.",
+              "price": 30
+            },
+            "pumpkin": {
+              "label": "Creamy pumpkin soup, savouriness from the broth, garlic and onion. ",
+              "price": 30
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "oatmeal",
+      "name": "Feel Good Overnight Oatmeal ",
+      "price": 25,
+      "description": "Overnight oats are simply oats that are left to soak overnight instead of cooked in the morning, which makes them perfect for a quick, filling and nutritious breakfast. It's a bit like making cold-brew coffee instead of the regular cup of hot coffee in the morning. Our overnight oatmeals are also some of our favorite desserts. They are creamy, dreamy, and delicious.",
+      "images": [
+        "<img class=\"active\" src=\"images/flavour/bowl.svg\" alt=\"bowl\">",
+        "<img class=\"active\" src=\"images/ingredients/oat.svg\" alt=\"oat\">",
+        "<img class=\"ingredients-chocolate \" src=\"images/ingredients/chocolate.svg\" alt=\"chocolate\">",
+        "<img class=\"ingredients-vanilla \" src=\"images/ingredients/vanilla.svg\" alt=\"vanilla\">",
+        "<img class=\"ingredients-hezelnut \" src=\"images/ingredients/hezelnut.svg\" alt=\"hezelnut\">",
+        "<img class=\"ingredients-orange \" src=\"images/ingredients/orange.svg\" alt=\"orange\">",
+        "<img class=\"ingredients-banana \" src=\"images/ingredients/banana.svg\" alt=\"banana\">",
+        "<img class=\"ingredients-kivi \" src=\"images/ingredients/kivi.svg\" alt=\"kivi\">",
+        "<img class=\"ingredients-apple \" src=\"images/ingredients/apple.svg\" alt=\"apple\">",
+        "<img class=\"ingredients-blueberry \" src=\"images/ingredients/blueberry.svg\" alt=\"blueberry\">",
+        "<img class=\"ingredients-strawberry\" src=\"images/ingredients/strawberry.svg\" alt=\"strawberry\">",
+        "<img class=\"ingredients-cinnamon \" src=\"images/ingredients/cinnamon.svg\" alt=\"cinnamon\">",
+        "<img class=\"ingredients-almound \" src=\"images/ingredients/almound.svg\" alt=\"almound\">"
+      ],
+      "params": {
+        "ingredients": {
+          "label": "Ingredients",
+          "type": "checkboxes",
+          "options": {
+            "apple": {
+              "label": "Apple",
+              "price": 1
+            },
+            "chocolate": {
+              "label": "Chocolate",
+              "price": 3,
+              "default": true
+            },
+            "vanilla": {
+              "label": "Vanilla",
+              "price": 3
+            },
+            "hezelnut": {
+              "label": "Hezelnut",
+              "price": 5
+            },
+            "orange": {
+              "label": "Orange",
+              "price": 3
+            },
+            "banana": {
+              "label": "Banana",
+              "price": 4,
+              "default": true
+            },
+            "kivi": {
+              "label": "Kivi",
+              "price": 3,
+              "default": true
+            },
+            "blueberry": {
+              "label": "Blueberry",
+              "price": 3,
+              "default": true
+            },
+            "strawberry": {
+              "label": "Strawberry",
+              "price": 3
+            },
+            "cinnamon": {
+              "label": "Cinnamon & Spice",
+              "price": 2
+            },
+            "almound": {
+              "label": "Almound",
+              "price": 3
+            }
+          }
+        },
+        "dairy": {
+          "label": "Dairy",
+          "type": "radios",
+          "options": {
+            "milk": {
+              "label": "Milk",
+              "price": 0,
+              "default": true
+            },
+            "oat": {
+              "label": "Oat milk",
+              "price": 2
+            },
+            "almound": {
+              "label": "Almound milk",
+              "price": 2
+            },
+            "yogurt": {
+              "label": "Greek Yougurt",
+              "price": 4
+            }
+          }
+        },
+        "sugar": {
+          "label": "Sugar",
+          "type": "radios",
+          "options": {
+            "maple": {
+              "label": "Maple syroup",
+              "price": 3
+            },
+            "honey": {
+              "label": "Honey",
+              "price": 5
+            },
+            "sugar": {
+              "label": "Sugar",
+              "price": 4
+            },
+            "sugarfree": {
+              "label": "Sugar free",
+              "price": 0,
+              "default": true
+            }
+          }
+        },
+        "size": {
+          "label": "size",
+          "type": "select",
+          "options": {
+            "standard": {
+              "label": "standard 200ml",
+              "price": 0,
+              "default": true
+            },
+            "medium": {
+              "label": "medium 400ml",
+              "price": 1
+            },
+            "large": {
+              "label": "large 600ml",
+              "price": 2
+            }
+          }
+        }
+      }
+    }
+  ],
+  "order": [],
+  "event": [
+    {
+      "id": 1,
+      "date": "2023-03-16",
+      "hour": "12:30",
+      "table": 1,
+      "repeat": false,
+      "duration": 4,
+      "ppl": 3,
+      "starters": []
+    },
+    {
+      "id": 2,
+      "date": "2023-03-01",
+      "hour": "16:00",
+      "table": 3,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["bread", "lemonWater"]
+    },
+    {
+      "id": 3,
+      "date": "2023-03-01",
+      "hour": "12:00",
+      "table": 3,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["bread", "lemonWater"]
+    },
+    {
+      "id": 4,
+      "date": "2023-03-01",
+      "hour": "13:00",
+      "table": 2,
+      "repeat": "daily",
+      "duration": 4,
+      "ppl": 3,
+      "starters": []
+    },
+    {
+      "id": 5,
+      "date": "2023-03-01",
+      "hour": "18:00",
+      "table": 2,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["lemonWater"]
+    }
+  ],
+  "booking": [
+    {
+      "id": 1,
+      "date": "2023-03-15",
+      "hour": "16:00",
+      "table": 1,
+      "duration": 3,
+      "ppl": 4,
+      "starters": ["water"]
+    }
+  ]
+}
