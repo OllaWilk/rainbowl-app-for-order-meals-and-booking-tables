@@ -116,7 +116,10 @@ export const settings = {
     deliveryFee: 15,
   },
   db: {
-    url: 'https://products.groupdocs.app/viewer/app/?lang=pl&file=242739d9-fa9c-43cc-a781-f9a181013ab9/app.json',
+    url:
+      '//' +
+      'https://ollawilk.github.io/rainbowl/dist/db/app.json/' +
+      (window.location.hostname == 'localhost' ? ':3131' : ''),
     product: 'product',
     order: 'order',
     booking: 'booking',
