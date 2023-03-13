@@ -46,6 +46,9 @@ class Cart {
     thisCart.dom.error = thisCart.dom.wrapper.querySelector(
       select.all.errorinfo
     );
+    thisCart.dom.confirmation = thisCart.dom.wrapper.querySelectorAll(
+      select.cart.confirmation
+    );
   }
 
   initActions() {
@@ -70,10 +73,7 @@ class Cart {
 
       if (!thisCart.products.length) {
         thisCart.dom.error.innerHTML = 'Add product to cart ';
-      } else if (
-        !thisCart.dom.phone.value ||
-        isNaN(thisCart.dom.phone.value || thisCart.dom.phone.value.lenght > 15)
-      ) {
+      } else if (!thisCart.dom.phone.value || isNaN(thisCart.dom.phone.value)) {
         thisCart.dom.phone.classList.add('error');
         thisCart.dom.error.innerHTML = 'enter phone number';
       } else if (!thisCart.dom.address.value) {
@@ -98,14 +98,19 @@ class Cart {
         }
       }
     });
+    /* Remove error from input if something change */
+    [...thisCart.dom.confirmation].forEach((input) => {
+      input.addEventListener('change', function () {
+        this.classList.remove('error');
+        thisCart.dom.error.innerHTML = '';
+      });
+    });
   }
 
   sendOrder() {
     const thisCart = this;
 
     const url = settings.db.url + '/' + settings.db.order;
-
-    console.log(url);
 
     const payload = {
       phone: thisCart.dom.phone.value,
