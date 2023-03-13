@@ -116,7 +116,7 @@ export const settings = {
     deliveryFee: 15,
   },
   db: {
-    url: 'https://glitch.com/edit/#!/cypress-highfalutin-sparrow',
+    url: 'https://products.groupdocs.app/viewer/app/?lang=pl&file=242739d9-fa9c-43cc-a781-f9a181013ab9/app.json',
     product: 'product',
     order: 'order',
     booking: 'booking',
