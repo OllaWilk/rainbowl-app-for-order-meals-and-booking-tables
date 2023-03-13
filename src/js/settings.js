@@ -3,12 +3,14 @@ export const select = {
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product',
     bookingWidget: '#template-booking-widget',
+    homepage: '#template-home-widget',
   },
   containerOf: {
     menu: '#product-list',
     cart: '#cart',
     pages: '#pages',
-    booking: '.booking-wrapper',
+    booking: '#booking-wrapper',
+    home: '#home',
   },
   menuProduct: {
     clickable: '.product__customize',
@@ -22,12 +24,22 @@ export const select = {
     menuProductsActive: '#product-list > .product.active',
     formInputs: 'input, select',
     errorinfo: '.alert-info',
+    menuProducts: '#product-list > .product',
   },
   widgets: {
     amount: {
       input: 'input.amount-input',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
+    },
+    datePicker: {
+      wrapper: '.date-picker',
+      input: `input[name="date"]`,
+    },
+    hourPicker: {
+      wrapper: '.hour-picker',
+      input: 'input[type="range"]',
+      output: '.output',
     },
   },
   cart: {
@@ -42,6 +54,7 @@ export const select = {
     formSubmit: '.cart__order [type="submit"]',
     phone: '[name="phone"]',
     address: '[name="address"]',
+    confirmation: '.cart__order-confirmation input',
   },
   cartProduct: {
     amountWidget: '.widget-amount',
@@ -58,6 +71,17 @@ export const select = {
   booking: {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
+    hourAmountInput: '[name="hours"]',
+    tables: '.floor-plan .table',
+    orderInputs: '.time-picker input ',
+    form: '.order-confirmation button',
+    bookedInfo: '.bookedInfo',
+    starters: '[name="starter"]',
+    phone: '[name="phone"]',
+    address: '.order-confirmation > input[name="address"]',
+  },
+  home: {
+    tiles: '#tiles',
   },
 };
 
@@ -74,6 +98,11 @@ export const classNames = {
   },
   nav: {
     active: 'active',
+  },
+  booking: {
+    loading: 'loading',
+    tableBooked: 'booked',
+    selectedTable: 'pick-table',
   },
 };
 
@@ -92,6 +121,20 @@ export const settings = {
     order: 'order',
     booking: 'booking',
     event: 'event',
+    dataStartParamKey: 'date_gte',
+    dataEndParamKey: 'date_lte',
+    notRepeatParam: 'repeat=false',
+    repeatParam: 'repeat_ne=false',
+  },
+  datePicker: {
+    maxDaysInFuture: 24,
+  },
+  hours: {
+    open: 12,
+    close: 24,
+  },
+  booking: {
+    tableIdAttribute: 'data-table',
   },
 };
 

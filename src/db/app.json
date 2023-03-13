@@ -50,7 +50,8 @@
             },
             "stravberry": {
               "label": "Strawberry",
-              "price": 3
+              "price": 3,
+              "default": true
             },
             "almound": {
               "label": "Almound",
@@ -148,6 +149,40 @@
         }
       }
     },
+
+    {
+      "id": "soup",
+      "class": "small",
+      "name": "Soup season is back",
+      "price": 30,
+      "description": "When there's just too much on your mind, that's when the warm, uncomplicated goodness of soup hits the spot.",
+      "images": [
+        "<img class=\"soups-broccoli active\" src=\"images/soups/broccoli.svg\">",
+        "<img class=\"soups-chili \" src=\"images/soups/chilisoup.svg\">",
+        "<img class=\"soups-pumpkin \" src=\"images/soups/pumpkin.svg\">"
+      ],
+      "params": {
+        "soups": {
+          "label": "soup",
+          "type": "radios",
+          "options": {
+            "broccoli": {
+              "label": "Broccoli cheddar soup, loaded with fresh broccoli, and creamy thanks to a potato and cheddar cheese.",
+              "price": 30,
+              "default": true
+            },
+            "chili": {
+              "label": "Chili Soup with ground meat and chili powder, plus beans and tomato.",
+              "price": 30
+            },
+            "pumpkin": {
+              "label": "Creamy pumpkin soup, savouriness from the broth, garlic and onion. ",
+              "price": 30
+            }
+          }
+        }
+      }
+    },
     {
       "id": "oatmeal",
       "name": "Feel Good Overnight Oatmeal ",
@@ -175,8 +210,7 @@
           "options": {
             "apple": {
               "label": "Apple",
-              "price": 1,
-              "default": true
+              "price": 1
             },
             "chocolate": {
               "label": "Chocolate",
@@ -197,15 +231,18 @@
             },
             "banana": {
               "label": "Banana",
-              "price": 4
+              "price": 4,
+              "default": true
             },
             "kivi": {
               "label": "Kivi",
-              "price": 3
+              "price": 3,
+              "default": true
             },
             "blueberry": {
               "label": "Blueberry",
-              "price": 3
+              "price": 3,
+              "default": true
             },
             "strawberry": {
               "label": "Strawberry",
@@ -287,46 +324,13 @@
           }
         }
       }
-    },
-    {
-      "id": "soup",
-      "class": "small",
-      "name": "Soup season is back",
-      "price": 30,
-      "description": "When there's just too much on your mind, that's when the warm, uncomplicated goodness of soup hits the spot.",
-      "images": [
-        "<img class=\"soups-broccoli active\" src=\"images/soups/broccoli.svg\">",
-        "<img class=\"soups-chili \" src=\"images/soups/chilisoup.svg\">",
-        "<img class=\"soups-pumpkin \" src=\"images/soups/pumpkin.svg\">"
-      ],
-      "params": {
-        "soups": {
-          "label": "soup",
-          "type": "radios",
-          "options": {
-            "broccoli": {
-              "label": "Broccoli cheddar soup, loaded with fresh broccoli, and creamy thanks to a potato and cheddar cheese.",
-              "price": 30,
-              "default": true
-            },
-            "chili": {
-              "label": "Chili Soup with ground meat and chili powder, plus beans and tomato.",
-              "price": 30
-            },
-            "pumpkin": {
-              "label": "Creamy pumpkin soup, savouriness from the broth, garlic and onion. ",
-              "price": 30
-            }
-          }
-        }
-      }
     }
   ],
   "order": [],
   "event": [
     {
       "id": 1,
-      "date": "2019-01-01",
+      "date": "2023-03-16",
       "hour": "12:30",
       "table": 1,
       "repeat": false,
@@ -336,7 +340,7 @@
     },
     {
       "id": 2,
-      "date": "2019-01-01",
+      "date": "2023-03-01",
       "hour": "16:00",
       "table": 3,
       "repeat": "daily",
@@ -346,7 +350,7 @@
     },
     {
       "id": 3,
-      "date": "2019-01-01",
+      "date": "2023-03-01",
       "hour": "12:00",
       "table": 3,
       "repeat": "daily",
@@ -356,7 +360,7 @@
     },
     {
       "id": 4,
-      "date": "2019-01-01",
+      "date": "2023-03-01",
       "hour": "13:00",
       "table": 2,
       "repeat": "daily",
@@ -366,7 +370,7 @@
     },
     {
       "id": 5,
-      "date": "2019-01-01",
+      "date": "2023-03-01",
       "hour": "18:00",
       "table": 2,
       "repeat": "daily",
@@ -375,5 +379,15 @@
       "starters": ["lemonWater"]
     }
   ],
-  "booking": []
+  "booking": [
+    {
+      "id": 1,
+      "date": "2023-03-15",
+      "hour": "16:00",
+      "table": 1,
+      "duration": 3,
+      "ppl": 4,
+      "starters": ["water"]
+    }
+  ]
 }

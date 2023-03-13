@@ -55,6 +55,28 @@ utils.convertDataSourceToDbJson = function () {
   console.log(JSON.stringify({ product: productJson, order: [] }, null, '  '));
 };
 
+utils.dateToStr = function (dateObj) {
+  return dateObj.toISOString().slice(0, 10);
+};
+
+utils.hourToNumber = function (hour) {
+  const parts = hour.split(':');
+
+  return parseInt(parts[0]) + parseInt(parts[1]) / 60;
+};
+
+utils.addDays = function (dateStr, days) {
+  const dateObj = new Date(dateStr);
+  dateObj.setDate(dateObj.getDate() + days);
+  return dateObj;
+};
+
+utils.numberToHour = function (number) {
+  return (
+    (Math.floor(number) % 24) + ':' + ((number % 1) * 60 + '').padStart(2, '0')
+  );
+};
+
 Handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
   return arg1 == arg2 ? options.fn(this) : options.inverse(this);
 });

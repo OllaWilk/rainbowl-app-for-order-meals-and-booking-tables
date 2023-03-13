@@ -1,11 +1,11 @@
 .cart {
   position: relative;
   z-index: 99990;
-  width: 400px;
+  width: 300px;
   transition: opacity 0.5s;
 
   @include sm-max {
-    max-width: 50px;
+    max-width: auto;
   }
 
   &.active {
@@ -41,7 +41,8 @@
     transition: opacity 0.5s;
 
     @include sm-max {
-      padding: 0rem;
+      padding: 0;
+      // width: 30%;
     }
   }
 
