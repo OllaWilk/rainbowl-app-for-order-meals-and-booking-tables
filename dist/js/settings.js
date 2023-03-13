@@ -118,8 +118,8 @@ export const settings = {
   db: {
     url:
       '//' +
-      'https://ollawilk.github.io/rainbowl/dist/db/app.json/' +
-      (window.location.hostname == 'localhost' ? ':3131' : ''),
+      window.location.hostname /
+        +(window.location.hostname == 'localhost' ? ':3131' : ''),
     product: 'product',
     order: 'order',
     booking: 'booking',
