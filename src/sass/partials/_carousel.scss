@@ -6,7 +6,13 @@
   margin: ($base-size * 3) auto;
 }
 
+.tiles {
+  //carousel-container
+  width: 100%;
+}
+
 .testimonial {
+  //carousel-slide
   @include flex(row, center, space-between);
   flex-wrap: wrap;
 
@@ -46,19 +52,20 @@
   }
 }
 
-.swiper-pagination {
+.dots {
   margin: 1rem;
   display: flex;
 
-  .bullet {
+  .dot {
     background-color: $color-second;
     opacity: 0.5;
     width: 15px;
     height: 15px;
     border-radius: 50%;
     margin: 1rem;
+    cursor: pointer;
   }
-  .bullet-active {
+  .dot.active {
     opacity: 1;
   }
 }
