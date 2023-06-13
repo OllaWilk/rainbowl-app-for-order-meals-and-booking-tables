@@ -73,6 +73,7 @@ const app = {
     const url = `${settings.db.url}/${settings.db.product}`;
 
     const errorPage = document.querySelector(select.page.noConnection);
+    console.log(url);
 
     fetch(url)
       .then((rawResponse) => {

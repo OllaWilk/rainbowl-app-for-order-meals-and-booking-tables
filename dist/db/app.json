@@ -327,89 +327,29 @@
   ],
   "order": [
     {
-      "phone": "111",
-      "address": "111",
-      "totalPrice": 185,
-      "totalNumber": 6,
-      "subtotalPrice": 170,
+      "phone": "777777777",
+      "address": "ab@c.pl",
+      "totalPrice": 93,
+      "totalNumber": 2,
+      "subtotalPrice": 78,
       "deliveryfee": 15,
       "products": [
         {
           "productInfo": {
             "id": "chiaPudding",
-            "amount": 3,
-            "price": 60,
-            "priceSingle": 20,
-            "params": {
-              "ingredients": {
-                "label": "Ingredients",
-                "options": {
-                  "almound": "Almound",
-                  "cinnamon": "Cinnamon & Spice"
-                }
-              },
-              "dairy": {
-                "label": "Dairy",
-                "options": {
-                  "coconut": "Coconut milk"
-                }
-              },
-              "flavour": {
-                "label": "Flavour",
-                "options": {
-                  "mint": "Mint"
-                }
-              },
-              "sugar": {
-                "label": "Sugar",
-                "options": {
-                  "sugarfree": "Sugarr free"
-                }
-              },
-              "size": {
-                "label": "size",
-                "options": {
-                  "standard": "standard 200 ml"
-                }
-              }
-            }
-          }
-        },
-        {
-          "productInfo": {
-            "id": "soup",
-            "amount": 1,
-            "price": 30,
-            "priceSingle": 30,
-            "params": {
-              "soups": {
-                "label": "soup",
-                "options": {
-                  "pumpkin": "Creamy pumpkin soup, savouriness from the broth, garlic and onion. "
-                }
-              }
-            }
-          }
-        },
-        {
-          "productInfo": {
-            "id": "oatmeal",
             "amount": 2,
-            "price": 80,
-            "priceSingle": 40,
+            "price": 78,
+            "priceSingle": 39,
             "params": {
               "ingredients": {
                 "label": "Ingredients",
                 "options": {
-                  "apple": "Apple",
-                  "chocolate": "Chocolate",
                   "vanilla": "Vanilla",
-                  "hezelnut": "Hezelnut",
                   "orange": "Orange",
                   "banana": "Banana",
                   "kivi": "Kivi",
                   "blueberry": "Blueberry",
-                  "strawberry": "Strawberry"
+                  "stravberry": "Strawberry"
                 }
               },
               "dairy": {
@@ -418,63 +358,16 @@
                   "milk": "Milk"
                 }
               },
-              "sugar": {
-                "label": "Sugar",
-                "options": {
-                  "sugarfree": "Sugar free"
-                }
-              },
-              "size": {
-                "label": "size",
-                "options": {
-                  "standard": "standard 200ml"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "id": 1
-    },
-    {
-      "phone": "777777777",
-      "address": "hh",
-      "totalPrice": 105,
-      "totalNumber": 3,
-      "subtotalPrice": 90,
-      "deliveryfee": 15,
-      "products": [
-        {
-          "productInfo": {
-            "id": "chiaPudding",
-            "amount": 3,
-            "price": 90,
-            "priceSingle": 30,
-            "params": {
-              "ingredients": {
-                "label": "Ingredients",
-                "options": {
-                  "orange": "Orange",
-                  "almound": "Almound",
-                  "cinnamon": "Cinnamon & Spice"
-                }
-              },
-              "dairy": {
-                "label": "Dairy",
-                "options": {
-                  "coconut": "Coconut milk"
-                }
-              },
               "flavour": {
                 "label": "Flavour",
                 "options": {
-                  "mint": "Mint"
+                  "acai": "Acai Powder"
                 }
               },
               "sugar": {
                 "label": "Sugar",
                 "options": {
-                  "honey": "Honey"
+                  "sugar": "Sugar"
                 }
               },
               "size": {
@@ -487,7 +380,7 @@
           }
         }
       ],
-      "id": 2
+      "id": 1
     }
   ],
   "event": [
