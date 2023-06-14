@@ -116,10 +116,7 @@ export const settings = {
     deliveryFee: 15,
   },
   db: {
-    url:
-      '//' +
-      window.location.hostname +
-      (window.location.hostname == 'localhost' ? ':3131' : ''),
+    url: 'https://rainbowl-api.onrender.com',
     product: 'product',
     order: 'order',
     booking: 'booking',
