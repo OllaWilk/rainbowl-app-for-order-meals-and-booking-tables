@@ -149,6 +149,7 @@
         }
       }
     },
+
     {
       "id": "soup",
       "class": "small",
@@ -325,64 +326,7 @@
       }
     }
   ],
-  "order": [
-    {
-      "phone": "777777777",
-      "address": "ab@c.pl",
-      "totalPrice": 93,
-      "totalNumber": 2,
-      "subtotalPrice": 78,
-      "deliveryfee": 15,
-      "products": [
-        {
-          "productInfo": {
-            "id": "chiaPudding",
-            "amount": 2,
-            "price": 78,
-            "priceSingle": 39,
-            "params": {
-              "ingredients": {
-                "label": "Ingredients",
-                "options": {
-                  "vanilla": "Vanilla",
-                  "orange": "Orange",
-                  "banana": "Banana",
-                  "kivi": "Kivi",
-                  "blueberry": "Blueberry",
-                  "stravberry": "Strawberry"
-                }
-              },
-              "dairy": {
-                "label": "Dairy",
-                "options": {
-                  "milk": "Milk"
-                }
-              },
-              "flavour": {
-                "label": "Flavour",
-                "options": {
-                  "acai": "Acai Powder"
-                }
-              },
-              "sugar": {
-                "label": "Sugar",
-                "options": {
-                  "sugar": "Sugar"
-                }
-              },
-              "size": {
-                "label": "size",
-                "options": {
-                  "medium": "medium 400 ml"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "id": 1
-    }
-  ],
+  "order": [],
   "event": [
     {
       "id": 1,
@@ -402,10 +346,7 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": [
-        "bread",
-        "lemonWater"
-      ]
+      "starters": ["bread", "lemonWater"]
     },
     {
       "id": 3,
@@ -415,10 +356,7 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": [
-        "bread",
-        "lemonWater"
-      ]
+      "starters": ["bread", "lemonWater"]
     },
     {
       "id": 4,
@@ -438,9 +376,7 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": [
-        "lemonWater"
-      ]
+      "starters": ["lemonWater"]
     }
   ],
   "booking": [
@@ -451,9 +387,7 @@
       "table": 1,
       "duration": 3,
       "ppl": 4,
-      "starters": [
-        "water"
-      ]
+      "starters": ["water"]
     }
   ]
 }
