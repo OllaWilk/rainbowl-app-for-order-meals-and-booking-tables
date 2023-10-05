@@ -114,7 +114,7 @@ class Cart {
     console.log(url);
 
     const payload = {
-      phone: thisCart.dom.phone.value,
+      phone: Number(thisCart.dom.phone.value),
       address: thisCart.dom.address.value,
       totalPrice: thisCart.totalPrice,
       totalNumber: thisCart.totalNumber,
@@ -123,6 +123,7 @@ class Cart {
       products: [],
     };
 
+    console.log(payload);
     for (let product of thisCart.products) {
       payload.products.push(product.getData());
     }

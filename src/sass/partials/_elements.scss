@@ -64,50 +64,19 @@ select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000;
 }
-
 .checkbox {
-  display: block;
-  position: relative;
-  margin-bottom: $base-size;
-  user-select: none;
-  min-width: 250px;
-  border: 1px solid $color-dark;
-  padding: 1rem;
-  border-radius: $radius;
-  cursor: pointer;
-
-  @include md-max {
-    min-width: auto;
-    margin: calc($base-size / 2);
-  }
-
-  input {
-    position: absolute;
-    opacity: 0;
-    height: 0;
-    width: 0;
-    cursor: pointer;
-  }
-
   &__checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
-
     &:after {
       content: '';
+
       position: absolute;
       display: none;
       width: 100%;
       height: 100%;
-      border: 2px solid $color-second;
       bottom: 0;
       top: 0;
-      right: 0;
       box-sizing: border-box;
+      right: 0;
     }
   }
 
@@ -117,12 +86,6 @@ select:-moz-focusring {
 
   input:checked ~ .checkbox__checkmark:after {
     display: block;
-  }
-
-  &.checkbox--round {
-    .checkbox__checkmark {
-      border-radius: 50%;
-    }
   }
 }
 

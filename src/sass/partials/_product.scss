@@ -99,9 +99,9 @@
     margin: 0 0 ($base-size * 3) 0;
     padding: 0;
     list-style-type: none;
-    @include flex(row, flex-start, space-between);
+    // @include flex(row, flex-start, space-between);
     width: 100%;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 
     @include sm-max {
       @include flex(column, center, center);
@@ -115,22 +115,12 @@
     text-transform: uppercase;
   }
 
-  .checkboxes-wrap {
-    @include flex(row, center, space-between);
-    flex-wrap: wrap;
-    padding: 1rem 0;
-
-    @include md-max {
-      @include flex(row, center, space-around);
-    }
-  }
-
   #selects-option {
     position: relative;
     cursor: pointer;
 
     select {
-      // appearance: none;
+      appearance: none;
       cursor: pointer;
       width: 250px;
       height: 55.8px;

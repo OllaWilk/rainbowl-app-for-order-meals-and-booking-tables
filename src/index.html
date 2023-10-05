@@ -407,26 +407,34 @@
               <!-- CHECKBOXES -->
               <li id="checkboxes-options">
                 <h3 class="product__params-title">{{{ label }}}</h3>
-                <div class="checkboxes-wrap">
-                {{#each options}}
-                  <div class="checkbox"> <!-- checkbox -->
-                    <label>
-                      <input type="checkbox" name="{{ paramId }}" value="{{ @key }}" id="{{ @key }}" {{#if default}}checked{{/if}}>
-                      {{{ label }}} (${{{ price }}})
-                      <span class="checkbox__checkmark"></span>
-                    </label>
+                <div class="slider">
+                  <div class="checkboxes-wrap slider-content">
+                  {{#each options}}
+                  <!-- checkbox -->
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="{{ paramId }}" value="{{ @key }}" id="{{ @key }}" {{#if default}}checked{{/if}}>
+                        {{{ label }}} (${{{ price }}})
+                        <span class="checkbox__checkmark"></span>
+                      </label>
+                    </div>
+                    {{/each}}
                   </div>
-                  {{/each}}
+                  <i class="fa-solid fa-chevron-left" id="arrow-left"></i>
+                  <i class="fa-solid fa-chevron-right" id = "arrow-right"></i>
                 </div>
               </li>
               {{/ifEquals}}
               {{#ifEquals type "radios"}}
               <!-- RADIOS -->
               <li id="radios-options">
-                <h3 class="product__params-title">{{{ label }}}</h3>
+                <h3 class="product__params-title">{{{ label }}} </h3>
+                <div class="slider">
+                  <div class="checkboxes-wrap slider-content" id="{{ paramId }}">
 
                 {{#each options}}
-                <div class="checkbox checkbox--round"> <!-- radio -->
+                <div class="checkbox checkbox--round " >
+                  <!-- radio -->
                   <label>
                     {{{ label }}} (${{{ price }}})
                     <input type="radio" name="{{ paramId }}" value="{{ @key }}" id="{{ @key }}" {{#if default}}checked{{/if}}>
@@ -434,9 +442,13 @@
                   </label>
                 </div>
                 {{/each}}
+              </div>
+              </div>
+
               </li>
               {{/ifEquals}}
               {{#ifEquals type "select"}}
+
               <!-- SELECT -->
               <li id="selects-option">
                 <h3 class="product__params-title">{{{ label }}}</h3>
