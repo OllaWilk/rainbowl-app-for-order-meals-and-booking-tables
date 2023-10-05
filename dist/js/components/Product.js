@@ -1,6 +1,7 @@
 import { select, templates, classNames } from '../settings.js';
 import { utils } from '../utils.js';
 import AmountWidget from './AmountWidget.js';
+import Slider from './Slider.js';
 
 class Product {
   constructor(id, data) {
@@ -12,6 +13,7 @@ class Product {
     this.initOrderForm();
     this.initAmountWidget();
     this.processOrder();
+    this.useSlider();
   }
 
   renderInMenu() {
@@ -57,6 +59,12 @@ class Product {
     thisProduct.amountWidgetElem = thisProduct.element.querySelector(
       select.menuProduct.amountWidget
     );
+
+    thisProduct.arrowSlider = thisProduct.element.querySelectorAll(
+      select.menuProduct.arrowsSlider
+    );
+    thisProduct.sliderContent =
+      thisProduct.element.querySelector('.slider-content ');
   }
 
   toggleAcordion() {
@@ -79,6 +87,17 @@ class Product {
         }
       });
     });
+  }
+
+  useSlider() {
+    const thisProduct = this;
+
+    if (thisProduct.arrowSlider.length > 0) {
+      thisProduct.slider -= new Slider(
+        thisProduct.arrowSlider,
+        thisProduct.sliderContent
+      );
+    }
   }
 
   initOrderForm() {

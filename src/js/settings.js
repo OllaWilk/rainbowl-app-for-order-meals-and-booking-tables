@@ -19,6 +19,7 @@ export const select = {
     priceElem: '.product__base-price .price',
     imageWrapper: '.product__images',
     amountWidget: '.widget-amount',
+    arrowsSlider: '.slider i',
   },
   all: {
     menuProductsActive: '#product-list > .product.active',
