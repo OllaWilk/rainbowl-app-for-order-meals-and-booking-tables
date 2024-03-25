@@ -371,21 +371,20 @@
         <div class="product__background-menu">
           <div class="product__wrap-header container">
             <header class="product__header">
-              <h3 class="product__name">{{ name }}</h3>
+              <!-- <div> -->
+                <h3 class="product__name">{{ name }}</h3>
+                <p class="product__base-price">$<span class="price">{{{ price }}} </span></p>
+              <!-- </div> -->
+
               <!-- PRODUCT DESCRIPTION -->
               <div class="product__description">
                 <p>{{{ description }}}</p>
+
               </div>
-              <p class="product__base-price">$<span class="price">{{{ price }}} </span></p>
-              <p class="product__allergens">Product may contains soy, egg and milk ingredients. May contain
+              <!-- <p class="product__base-price">$<span class="price">{{{ price }}} </span></p> -->
+              <p class="product__allergens">* Product may contains soy, egg and milk ingredients. May contain
                 traces of tree nuts. </p>
             </header>
-              <!-- PRODUCT IMAGES -->
-            <div class="product__images">
-              {{#each images}}
-              {{{ this }}}
-              {{/each}}
-            </div>
           </div>
         </div>
 
@@ -399,6 +398,11 @@
         </div>
         <!-- PRODUCT ACCORDION -->
         <div class="product__wrapper container ">
+          <div class="product__images">
+            {{#each images}}
+            {{{ this }}}
+            {{/each}}
+          </div>
           <form class="product__order">
             <ul class="product__params">
               <!-- PARAMS -->
@@ -420,18 +424,15 @@
                     </div>
                     {{/each}}
                   </div>
-                  <i class="fa-solid fa-chevron-left" id="arrow-left"></i>
-                  <i class="fa-solid fa-chevron-right" id = "arrow-right"></i>
                 </div>
               </li>
               {{/ifEquals}}
               {{#ifEquals type "radios"}}
               <!-- RADIOS -->
               <li id="radios-options">
-                <h3 class="product__params-title">{{{ label }}} </h3>
+                <h3 class="product__params-title">{{{ label }}}</h3>
                 <div class="slider">
                   <div class="checkboxes-wrap slider-content" id="{{ paramId }}">
-
                 {{#each options}}
                 <div class="checkbox checkbox--round " >
                   <!-- radio -->
@@ -448,7 +449,6 @@
               </li>
               {{/ifEquals}}
               {{#ifEquals type "select"}}
-
               <!-- SELECT -->
               <li id="selects-option">
                 <h3 class="product__params-title">{{{ label }}}</h3>
